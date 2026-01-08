@@ -1,10 +1,11 @@
 import type { Unit, Lesson, Exercise, LevelId } from '@/lib/types';
 import { a1Units } from './levels/a1';
+import { a2Units } from './levels/a2';
 
 // All units by level
 const unitsByLevel: Record<LevelId, Unit[]> = {
   a1: a1Units,
-  a2: [], // TODO: Add A2 units
+  a2: a2Units,
   b1: [], // TODO: Add B1 units
   b2: [], // TODO: Add B2 units
 };
@@ -65,3 +66,4 @@ export function getLessonInfo(unitId: string, lessonId: string): Omit<Lesson, 'e
 
 // Re-export for convenience
 export { a1Units } from './levels/a1';
+export { a2Units } from './levels/a2';
