@@ -5,6 +5,18 @@ import { CheckIcon, XIcon } from '@/components/icons';
 import { shuffleArray } from '@/lib/utils';
 import type { MatchingExercise } from '@/lib/types';
 
+// Colors for matching pairs - distinct and visually appealing
+const MATCH_COLORS = [
+  { bg: 'bg-blue-500/20', border: 'border-blue-500', text: 'text-blue-600' },
+  { bg: 'bg-purple-500/20', border: 'border-purple-500', text: 'text-purple-600' },
+  { bg: 'bg-amber-500/20', border: 'border-amber-500', text: 'text-amber-600' },
+  { bg: 'bg-emerald-500/20', border: 'border-emerald-500', text: 'text-emerald-600' },
+  { bg: 'bg-rose-500/20', border: 'border-rose-500', text: 'text-rose-600' },
+  { bg: 'bg-cyan-500/20', border: 'border-cyan-500', text: 'text-cyan-600' },
+  { bg: 'bg-orange-500/20', border: 'border-orange-500', text: 'text-orange-600' },
+  { bg: 'bg-indigo-500/20', border: 'border-indigo-500', text: 'text-indigo-600' },
+];
+
 interface MatchingProps {
   exercise: MatchingExercise;
   onAnswer: (isCorrect: boolean, attempts: number) => void;
@@ -18,28 +30,71 @@ export function Matching({ exercise, onAnswer, disabled = false }: MatchingProps
   );
 
   const [selectedLeft, setSelectedLeft] = useState<number | null>(null);
+  const [selectedRight, setSelectedRight] = useState<number | null>(null);
   const [matches, setMatches] = useState<Map<number, number>>(new Map());
+  const [matchColors, setMatchColors] = useState<Map<number, number>>(new Map()); // leftIndex -> colorIndex
   const [attempts, setAttempts] = useState(0);
   const [showResult, setShowResult] = useState(false);
   const [results, setResults] = useState<Map<number, boolean>>(new Map());
+  const [nextColorIndex, setNextColorIndex] = useState(0);
 
   const handleLeftClick = (index: number) => {
-    if (disabled || showResult || matches.has(index)) return;
+    if (disabled || showResult) return;
+
+    // If already matched, allow unmatching by clicking again
+    if (matches.has(index)) {
+      const newMatches = new Map(matches);
+      newMatches.delete(index);
+      setMatches(newMatches);
+
+      const newMatchColors = new Map(matchColors);
+      newMatchColors.delete(index);
+      setMatchColors(newMatchColors);
+      return;
+    }
+
+    // Toggle selection
     setSelectedLeft(selectedLeft === index ? null : index);
+    setSelectedRight(null);
   };
 
   const handleRightClick = (shuffledIndex: number) => {
-    if (disabled || showResult || selectedLeft === null) return;
+    if (disabled || showResult) return;
 
     // Check if this right item is already matched
-    const isRightMatched = Array.from(matches.values()).includes(shuffledIndex);
-    if (isRightMatched) return;
+    const matchedLeftIndex = Array.from(matches.entries()).find(([_, rightIdx]) => rightIdx === shuffledIndex)?.[0];
+
+    // If already matched, allow unmatching by clicking again
+    if (matchedLeftIndex !== undefined) {
+      const newMatches = new Map(matches);
+      newMatches.delete(matchedLeftIndex);
+      setMatches(newMatches);
+
+      const newMatchColors = new Map(matchColors);
+      newMatchColors.delete(matchedLeftIndex);
+      setMatchColors(newMatchColors);
+      return;
+    }
+
+    // If no left item is selected, select this right item
+    if (selectedLeft === null) {
+      setSelectedRight(selectedRight === shuffledIndex ? null : shuffledIndex);
+      return;
+    }
 
     // Create the match
     const newMatches = new Map(matches);
     newMatches.set(selectedLeft, shuffledIndex);
     setMatches(newMatches);
+
+    // Assign a color to this match
+    const newMatchColors = new Map(matchColors);
+    newMatchColors.set(selectedLeft, nextColorIndex);
+    setMatchColors(newMatchColors);
+    setNextColorIndex((nextColorIndex + 1) % MATCH_COLORS.length);
+
     setSelectedLeft(null);
+    setSelectedRight(null);
   };
 
   const handleCheck = () => {
@@ -69,6 +124,7 @@ export function Matching({ exercise, onAnswer, disabled = false }: MatchingProps
   const getLeftItemStyle = (index: number) => {
     const isMatched = matches.has(index);
     const isSelected = selectedLeft === index;
+    const colorIndex = matchColors.get(index);
 
     if (showResult) {
       const isCorrect = results.get(index);
@@ -79,8 +135,9 @@ export function Matching({ exercise, onAnswer, disabled = false }: MatchingProps
       }
     }
 
-    if (isMatched) {
-      return 'border-primary bg-primary/10 text-primary';
+    if (isMatched && colorIndex !== undefined) {
+      const color = MATCH_COLORS[colorIndex];
+      return `${color.border} ${color.bg} ${color.text} cursor-pointer`;
     }
 
     if (isSelected) {
@@ -91,43 +148,44 @@ export function Matching({ exercise, onAnswer, disabled = false }: MatchingProps
   };
 
   const getRightItemStyle = (shuffledIndex: number) => {
-    const isMatched = Array.from(matches.values()).includes(shuffledIndex);
-    const originalIndex = shuffledRight[shuffledIndex].originalIndex;
+    // Find if this right item is matched
+    let matchedLeftIndex: number | undefined;
+    matches.forEach((rightIdx, leftIdx) => {
+      if (rightIdx === shuffledIndex) {
+        matchedLeftIndex = leftIdx;
+      }
+    });
 
-    if (showResult) {
-      // Find which left item matched with this right item
-      let matchedLeftIndex: number | null = null;
-      matches.forEach((rightIdx, leftIdx) => {
-        if (rightIdx === shuffledIndex) {
-          matchedLeftIndex = leftIdx;
-        }
-      });
+    const isMatched = matchedLeftIndex !== undefined;
+    const isSelected = selectedRight === shuffledIndex;
+    const colorIndex = matchedLeftIndex !== undefined ? matchColors.get(matchedLeftIndex) : undefined;
 
-      if (matchedLeftIndex !== null) {
-        const isCorrect = matchedLeftIndex === originalIndex;
-        if (isCorrect) {
-          return 'border-success bg-success/10 text-success';
-        } else {
-          return 'border-error bg-error/10 text-error';
-        }
+    if (showResult && matchedLeftIndex !== undefined) {
+      const originalIndex = shuffledRight[shuffledIndex].originalIndex;
+      const isCorrect = matchedLeftIndex === originalIndex;
+      if (isCorrect) {
+        return 'border-success bg-success/10 text-success';
+      } else {
+        return 'border-error bg-error/10 text-error';
       }
     }
 
-    if (isMatched) {
-      return 'border-primary bg-primary/10 text-primary';
+    if (isMatched && colorIndex !== undefined) {
+      const color = MATCH_COLORS[colorIndex];
+      return `${color.border} ${color.bg} ${color.text} cursor-pointer`;
     }
 
-    if (selectedLeft !== null && !isMatched) {
-      return 'border-border bg-surface text-text-primary hover:border-primary/50 cursor-pointer';
+    if (isSelected) {
+      return 'border-primary bg-primary/5 text-primary ring-2 ring-primary';
     }
 
-    return 'border-border bg-surface text-text-primary';
+    return 'border-border bg-surface text-text-primary hover:border-primary/50 cursor-pointer';
   };
 
   return (
     <div className="space-y-6">
       <p className="text-center text-text-secondary mb-4">
-        Click an item on the left, then click its match on the right
+        Click an item on the left, then click its match on the right. Click again to unmatch.
       </p>
 
       {/* Matching columns */}
@@ -138,7 +196,7 @@ export function Matching({ exercise, onAnswer, disabled = false }: MatchingProps
             <button
               key={`left-${index}`}
               onClick={() => handleLeftClick(index)}
-              disabled={disabled || showResult || matches.has(index)}
+              disabled={disabled || showResult}
               className={`
                 w-full p-4 rounded-lg border-2 text-left transition-all duration-200
                 flex items-center gap-2
@@ -161,7 +219,7 @@ export function Matching({ exercise, onAnswer, disabled = false }: MatchingProps
             <button
               key={`right-${shuffledIndex}`}
               onClick={() => handleRightClick(shuffledIndex)}
-              disabled={disabled || showResult || selectedLeft === null}
+              disabled={disabled || showResult}
               className={`
                 w-full p-4 rounded-lg border-2 text-left transition-all duration-200
                 ${getRightItemStyle(shuffledIndex)}

@@ -9,26 +9,8 @@ import { ChevronLeftIcon, ChevronRightIcon, LockIcon, CheckIcon, PlayIcon } from
 import { useProgress } from '@/lib/hooks';
 import { LEVELS } from '@/lib/constants';
 import { getLevelGradientClass } from '@/lib/utils';
+import { getUnitById } from '@/lib/data';
 import type { LevelId } from '@/lib/types';
-
-// Sample lessons data (will be replaced with real data in Phase 3)
-const SAMPLE_LESSONS = [
-  { id: 'l1', title: 'Hello and Goodbye', description: 'Learn basic greetings in English', exercisesCount: 10 },
-  { id: 'l2', title: 'Nice to Meet You', description: 'Introducing yourself to others', exercisesCount: 10 },
-  { id: 'l3', title: 'How Are You?', description: 'Asking and answering about feelings', exercisesCount: 10 },
-  { id: 'l4', title: 'Good Morning, Afternoon, Evening', description: 'Time-based greetings', exercisesCount: 10 },
-  { id: 'l5', title: 'See You Later', description: 'Different ways to say goodbye', exercisesCount: 10 },
-  { id: 'l6', title: 'Please and Thank You', description: 'Basic polite expressions', exercisesCount: 10 },
-  { id: 'l7', title: 'Excuse Me and Sorry', description: 'Apologizing and getting attention', exercisesCount: 10 },
-  { id: 'l8', title: 'Yes and No', description: 'Affirmative and negative responses', exercisesCount: 10 },
-  { id: 'l9', title: 'I Don\'t Understand', description: 'Asking for clarification', exercisesCount: 10 },
-  { id: 'l10', title: 'Can You Help Me?', description: 'Requesting assistance', exercisesCount: 10 },
-  { id: 'l11', title: 'What\'s Your Name?', description: 'Asking for information', exercisesCount: 10 },
-  { id: 'l12', title: 'Where Are You From?', description: 'Talking about origins', exercisesCount: 10 },
-  { id: 'l13', title: 'Formal vs Informal Greetings', description: 'Register and context', exercisesCount: 10 },
-  { id: 'l14', title: 'Greetings in Context', description: 'Real-world scenarios', exercisesCount: 10 },
-  { id: 'l15', title: 'Unit Review', description: 'Practice everything you learned', exercisesCount: 15 },
-];
 
 interface PageProps {
   params: Promise<{ levelId: string; unitId: string }>;
@@ -41,8 +23,9 @@ export default function UnitPage({ params }: PageProps) {
 
   const validLevelId = levelId as LevelId;
   const level = LEVELS[validLevelId];
+  const unit = getUnitById(unitId);
 
-  if (!level) {
+  if (!level || !unit) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
@@ -63,6 +46,8 @@ export default function UnitPage({ params }: PageProps) {
 
   // Get unit number from unitId
   const unitNumber = parseInt(unitId.split('-u')[1]) || 1;
+  const lessons = unit.lessons;
+  const totalExercises = lessons.reduce((sum, l) => sum + l.exercises.length, 0);
 
   return (
     <div className="min-h-screen bg-background">
@@ -85,17 +70,17 @@ export default function UnitPage({ params }: PageProps) {
           {/* Unit Header */}
           <div className="flex items-center gap-4 mb-8">
             <div className={`w-14 h-14 rounded-xl ${getLevelGradientClass(validLevelId)} flex items-center justify-center`}>
-              <span className="text-white text-3xl">👋</span>
+              <span className="text-white text-3xl">{unit.icon || '📚'}</span>
             </div>
             <div>
               <div className="flex items-center gap-2 mb-1">
                 <span className="text-sm text-text-muted">Unit {unitNumber}</span>
               </div>
               <h1 className="text-2xl font-bold text-text-primary">
-                Greetings & Introductions
+                {unit.title}
               </h1>
               <p className="text-text-secondary">
-                Hello, goodbye, my name is, nice to meet you
+                {unit.description}
               </p>
             </div>
           </div>
@@ -108,39 +93,47 @@ export default function UnitPage({ params }: PageProps) {
             </div>
             <ProgressBar value={0} max={100} variant={validLevelId} size="md" />
             <div className="flex items-center justify-between mt-3 text-xs text-text-muted">
-              <span>15 lessons</span>
-              <span>150 exercises</span>
-              <span>~2 hours</span>
+              <span>{lessons.length} lessons</span>
+              <span>{totalExercises} exercises</span>
+              <span>~{Math.ceil(totalExercises / 10)} hours</span>
             </div>
           </Card>
 
           {/* Lessons List */}
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-lg font-semibold text-text-primary">Lessons</h2>
-            <span className="text-sm text-text-muted">0/15 completed</span>
+            <span className="text-sm text-text-muted">0/{lessons.length} completed</span>
           </div>
 
           <div className="space-y-2">
-            {SAMPLE_LESSONS.map((lesson, index) => {
-              const lessonFullId = `${unitId}-${lesson.id}`;
+            {lessons.map((lesson, index) => {
+              const lessonFullId = lesson.id;
               const completed = isLessonCompleted(lessonFullId);
-              const isLocked = index > 0 && !isLessonCompleted(`${unitId}-l${index}`);
-              const isCurrent = index === 0 || (index > 0 && isLessonCompleted(`${unitId}-l${index}`));
+              // LESSON LOCK DISABLED - All lessons accessible
+              // const isLocked = index > 0 && !isLessonCompleted(`${unitId}-l${index}`);
+              // const isCurrent = index === 0 || (index > 0 && isLessonCompleted(`${unitId}-l${index}`));
+              const isLocked = false;
+              const isCurrent = false;
+
+              // Extract lesson number from id (e.g., 'a1-u1-l1' -> 'l1')
+              const lessonSlug = lesson.id.split('-').pop() || `l${index + 1}`;
 
               return (
                 <Link
                   key={lesson.id}
-                  href={isLocked ? '#' : `/levels/${validLevelId}/${unitId}/${lesson.id}`}
-                  onClick={(e) => isLocked && e.preventDefault()}
-                  className={isLocked ? 'cursor-not-allowed' : ''}
+                  href={`/levels/${validLevelId}/${unitId}/${lessonSlug}`}
+                  // href={isLocked ? '#' : `/levels/${validLevelId}/${unitId}/${lesson.id}`}
+                  // onClick={(e) => isLocked && e.preventDefault()}
+                  // className={isLocked ? 'cursor-not-allowed' : ''}
                 >
                   <Card
-                    variant={isLocked ? 'default' : 'interactive'}
+                    variant="interactive"
                     padding="sm"
-                    className={`
-                      ${isLocked ? 'opacity-50' : ''}
-                      ${isCurrent && !completed ? 'ring-2 ring-primary' : ''}
-                    `}
+                    // variant={isLocked ? 'default' : 'interactive'}
+                    // className={`
+                    //   ${isLocked ? 'opacity-50' : ''}
+                    //   ${isCurrent && !completed ? 'ring-2 ring-primary' : ''}
+                    // `}
                   >
                     <div className="flex items-center gap-3">
                       {/* Lesson Number/Status */}
@@ -149,16 +142,12 @@ export default function UnitPage({ params }: PageProps) {
                           w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold shrink-0
                           ${completed
                             ? 'bg-success text-white'
-                            : isLocked
-                              ? 'bg-border text-text-muted'
-                              : 'bg-primary text-white'
+                            : 'bg-primary text-white'
                           }
                         `}
                       >
                         {completed ? (
                           <CheckIcon size={18} />
-                        ) : isLocked ? (
-                          <LockIcon size={16} />
                         ) : (
                           index + 1
                         )}
@@ -177,8 +166,10 @@ export default function UnitPage({ params }: PageProps) {
                       {/* Exercise Count & Arrow */}
                       <div className="flex items-center gap-2 shrink-0">
                         <span className="text-xs text-text-muted">
-                          {lesson.exercisesCount} exercises
+                          {lesson.exercises.length} exercises
                         </span>
+                        <ChevronRightIcon size={18} className="text-text-muted" />
+                        {/* LOCK LOGIC DISABLED
                         {!isLocked && (
                           isCurrent && !completed ? (
                             <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
@@ -188,6 +179,7 @@ export default function UnitPage({ params }: PageProps) {
                             <ChevronRightIcon size={18} className="text-text-muted" />
                           )
                         )}
+                        */}
                       </div>
                     </div>
                   </Card>
@@ -201,7 +193,10 @@ export default function UnitPage({ params }: PageProps) {
             <Button
               fullWidth
               size="lg"
-              onClick={() => router.push(`/levels/${validLevelId}/${unitId}/l1`)}
+              onClick={() => {
+                const firstLessonSlug = lessons[0]?.id.split('-').pop() || 'l1';
+                router.push(`/levels/${validLevelId}/${unitId}/${firstLessonSlug}`);
+              }}
               rightIcon={<PlayIcon size={20} />}
             >
               Start Learning

@@ -103,38 +103,39 @@ export default function LevelPage({ params }: PageProps) {
     );
   }
 
-  const levelOrder: LevelId[] = ['a1', 'a2', 'b1', 'b2'];
-  const currentLevelIndex = levelOrder.indexOf(progress.currentLevel);
-  const thisLevelIndex = levelOrder.indexOf(validLevelId);
-  const isLocked = thisLevelIndex > currentLevelIndex;
+  // LEVEL LOCK DISABLED - All levels accessible
+  // const levelOrder: LevelId[] = ['a1', 'a2', 'b1', 'b2'];
+  // const currentLevelIndex = levelOrder.indexOf(progress.currentLevel);
+  // const thisLevelIndex = levelOrder.indexOf(validLevelId);
+  // const isLocked = thisLevelIndex > currentLevelIndex;
 
-  if (isLocked) {
-    return (
-      <div className="min-h-screen bg-background">
-        <Header progress={progress} />
-        <Sidebar currentLevel={progress.currentLevel} />
+  // if (isLocked) {
+  //   return (
+  //     <div className="min-h-screen bg-background">
+  //       <Header progress={progress} />
+  //       <Sidebar currentLevel={progress.currentLevel} />
 
-        <main className="pt-16 pb-20 md:pb-8 md:pl-64">
-          <div className="max-w-4xl mx-auto px-4 py-6">
-            <div className="text-center py-16">
-              <div className="w-20 h-20 rounded-2xl bg-border flex items-center justify-center mx-auto mb-6">
-                <LockIcon size={40} className="text-text-muted" />
-              </div>
-              <h1 className="text-2xl font-bold text-text-primary mb-2">Level Locked</h1>
-              <p className="text-text-secondary mb-6">
-                Complete {LEVELS[progress.currentLevel].fullName} to unlock this level
-              </p>
-              <Button onClick={() => router.push(`/levels/${progress.currentLevel}`)}>
-                Go to Current Level
-              </Button>
-            </div>
-          </div>
-        </main>
+  //       <main className="pt-16 pb-20 md:pb-8 md:pl-64">
+  //         <div className="max-w-4xl mx-auto px-4 py-6">
+  //           <div className="text-center py-16">
+  //             <div className="w-20 h-20 rounded-2xl bg-border flex items-center justify-center mx-auto mb-6">
+  //               <LockIcon size={40} className="text-text-muted" />
+  //             </div>
+  //             <h1 className="text-2xl font-bold text-text-primary mb-2">Level Locked</h1>
+  //             <p className="text-text-secondary mb-6">
+  //               Complete {LEVELS[progress.currentLevel].fullName} to unlock this level
+  //             </p>
+  //             <Button onClick={() => router.push(`/levels/${progress.currentLevel}`)}>
+  //               Go to Current Level
+  //             </Button>
+  //           </div>
+  //         </div>
+  //       </main>
 
-        <BottomNav />
-      </div>
-    );
-  }
+  //       <BottomNav />
+  //     </div>
+  //   );
+  // }
 
   return (
     <div className="min-h-screen bg-background">
@@ -183,33 +184,35 @@ export default function LevelPage({ params }: PageProps) {
           <h2 className="text-lg font-semibold text-text-primary mb-4">Units</h2>
           <div className="space-y-3">
             {units.map((unit, index) => {
-              const isUnitLocked = index > 0; // For now, only first unit is unlocked
+              // UNIT LOCK DISABLED - All units accessible
+              // const isUnitLocked = index > 0; // For now, only first unit is unlocked
+              const isUnitLocked = false;
               const isUnitCompleted = false;
-              const unitProgress = index === 0 ? 50 : 0;
+              const unitProgress = 0;
 
               return (
                 <Link
                   key={unit.id}
-                  href={isUnitLocked ? '#' : `/levels/${validLevelId}/${unit.id}`}
-                  onClick={(e) => isUnitLocked && e.preventDefault()}
-                  className={isUnitLocked ? 'cursor-not-allowed' : ''}
+                  href={`/levels/${validLevelId}/${unit.id}`}
+                  // href={isUnitLocked ? '#' : `/levels/${validLevelId}/${unit.id}`}
+                  // onClick={(e) => isUnitLocked && e.preventDefault()}
+                  // className={isUnitLocked ? 'cursor-not-allowed' : ''}
                 >
                   <Card
-                    variant={isUnitLocked ? 'default' : 'interactive'}
+                    variant="interactive"
                     padding="md"
-                    className={isUnitLocked ? 'opacity-60' : ''}
+                    // variant={isUnitLocked ? 'default' : 'interactive'}
+                    // className={isUnitLocked ? 'opacity-60' : ''}
                   >
                     <div className="flex items-center gap-4">
                       {/* Unit Number/Icon */}
                       <div
                         className={`
                           w-12 h-12 rounded-lg flex items-center justify-center text-2xl
-                          ${isUnitLocked ? 'bg-border' : isUnitCompleted ? 'bg-success/10' : 'bg-primary/10'}
+                          ${isUnitCompleted ? 'bg-success/10' : 'bg-primary/10'}
                         `}
                       >
-                        {isUnitLocked ? (
-                          <LockIcon size={20} className="text-text-muted" />
-                        ) : isUnitCompleted ? (
+                        {isUnitCompleted ? (
                           <CheckIcon size={20} className="text-success" />
                         ) : (
                           unit.icon

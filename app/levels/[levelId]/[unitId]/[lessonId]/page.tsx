@@ -7,7 +7,7 @@ import { Card, Button, ProgressBar } from '@/components/ui';
 import { ExerciseWrapper, ExerciseRenderer, LessonComplete } from '@/components/exercises';
 import { XIcon, ChevronLeftIcon } from '@/components/icons';
 import { useProgress } from '@/lib/hooks';
-import { getExercisesForLesson } from '@/lib/data/sample-exercises';
+import { getExercisesForLesson, getLessonInfo } from '@/lib/data';
 import { LEVELS, POINTS } from '@/lib/constants';
 import { calculatePercentage, getLevelGradientClass } from '@/lib/utils';
 import type { LevelId, Exercise } from '@/lib/types';
@@ -28,7 +28,8 @@ export default function LessonPage({ params }: PageProps) {
 
   const validLevelId = levelId as LevelId;
   const level = LEVELS[validLevelId];
-  const exercises = getExercisesForLesson(`${unitId}-${lessonId}`);
+  const lessonInfo = getLessonInfo(unitId, lessonId);
+  const exercises = getExercisesForLesson(unitId, lessonId);
   const currentExercise = exercises[currentExerciseIndex];
 
   const handleAnswer = useCallback((isCorrect: boolean, attempts: number) => {
