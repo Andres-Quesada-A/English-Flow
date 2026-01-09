@@ -11,6 +11,9 @@ import { unit9 } from './unit-09-passive-voice';
 import { unit10 } from './unit-10-reported-speech';
 import { unit11 } from './unit-11-phrasal-verbs';
 import { unit12 } from './unit-12-linking-words';
+import { unit13 } from './unit-13-technology-communication';
+import { unit14 } from './unit-14-health-body';
+import { unit15 } from './unit-15-environment-nature';
 
 export const b1Units: Unit[] = [
   unit1,
@@ -25,6 +28,9 @@ export const b1Units: Unit[] = [
   unit10,
   unit11,
   unit12,
+  unit13,
+  unit14,
+  unit15,
 ];
 
 export const b1Level = {

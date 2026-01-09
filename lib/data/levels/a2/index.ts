@@ -11,6 +11,9 @@ import { unit9 } from './unit-09-superlatives';
 import { unit10 } from './unit-10-future-going-to';
 import { unit11 } from './unit-11-future-will';
 import { unit12 } from './unit-12-modal-verbs-basic';
+import { unit13 } from './unit-13-travel-transportation';
+import { unit14 } from './unit-14-shopping-clothes';
+import { unit15 } from './unit-15-weather-seasons';
 
 export const a2Units: Unit[] = [
   unit1,
@@ -25,6 +28,9 @@ export const a2Units: Unit[] = [
   unit10,
   unit11,
   unit12,
+  unit13,
+  unit14,
+  unit15,
 ];
 
 export const a2Level = {

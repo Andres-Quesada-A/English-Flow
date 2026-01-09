@@ -11,6 +11,9 @@ import { unit9 } from './unit-09-weather';
 import { unit10 } from './unit-10-body-health';
 import { unit11 } from './unit-11-clothes-shopping';
 import { unit12 } from './unit-12-daily-activities';
+import { unit13 } from './unit-13-colors-numbers';
+import { unit14 } from './unit-14-food-drinks';
+import { unit15 } from './unit-15-family-home';
 
 export const a1Units: Unit[] = [
   unit1,
@@ -25,6 +28,9 @@ export const a1Units: Unit[] = [
   unit10,
   unit11,
   unit12,
+  unit13,
+  unit14,
+  unit15,
 ];
 
 export const a1Level = {

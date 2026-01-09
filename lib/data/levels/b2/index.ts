@@ -11,6 +11,9 @@ import { unit9 } from './unit-09-advanced-relative-clauses';
 import { unit10 } from './unit-10-inversion';
 import { unit11 } from './unit-11-gerunds-infinitives';
 import { unit12 } from './unit-12-emphasis-cleft-sentences';
+import { unit13 } from './unit-13-business-work';
+import { unit14 } from './unit-14-media-news';
+import { unit15 } from './unit-15-society-culture';
 
 export const b2Units: Unit[] = [
   unit1,
@@ -25,6 +28,9 @@ export const b2Units: Unit[] = [
   unit10,
   unit11,
   unit12,
+  unit13,
+  unit14,
+  unit15,
 ];
 
 export const b2Level = {
