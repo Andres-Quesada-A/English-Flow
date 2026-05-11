@@ -5,9 +5,10 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Header, BottomNav, Sidebar } from '@/components/layout';
 import { Card, Button } from '@/components/ui';
-import { ChevronLeftIcon, ChevronRightIcon } from '@/components/icons';
+import { ChevronLeftIcon, ChevronRightIcon, SpeakerIcon } from '@/components/icons';
 import { useProgress } from '@/lib/hooks';
 import { allVocabularyTopics } from '@/lib/data/vocabulary';
+import { getPhonetic, speakText } from '@/lib/utils/phonetics';
 
 interface Props {
   params: Promise<{ topicId: string }>;
@@ -115,6 +116,7 @@ export default function VocabularyTopicPage({ params }: Props) {
                   {section.words.map((word, wIdx) => {
                     const wordKey = `${sIdx}-${wIdx}`;
                     const isRevealed = revealedWords.has(wordKey);
+                    const phonetic = getPhonetic(word.english);
                     return (
                       <button
                         key={wIdx}
@@ -123,12 +125,24 @@ export default function VocabularyTopicPage({ params }: Props) {
                       >
                         <div className="flex items-center justify-between gap-4">
                           <div className="flex-1 min-w-0">
-                            <p className="font-medium text-text-primary text-sm">{word.english}</p>
+                            <div className="flex items-center gap-2">
+                              <p className="font-medium text-text-primary text-sm">{word.english}</p>
+                              <button
+                                onClick={(e) => { e.stopPropagation(); speakText(word.english); }}
+                                className="shrink-0 p-1 rounded-full text-text-muted hover:text-primary hover:bg-primary/10 transition-colors"
+                                aria-label={`Escuchar pronunciación de "${word.english}"`}
+                              >
+                                <SpeakerIcon size={13} />
+                              </button>
+                            </div>
+                            {phonetic && (
+                              <p className="text-xs text-primary/60 font-mono mt-0.5">{phonetic}</p>
+                            )}
                             {word.example && (
                               <p className="text-xs text-text-muted mt-0.5 italic">{word.example}</p>
                             )}
                           </div>
-                          <div className="flex-shrink-0">
+                          <div className="shrink-0">
                             {isRevealed ? (
                               <p className="text-sm text-primary font-medium text-right">{word.spanish}</p>
                             ) : (
@@ -190,7 +204,7 @@ export default function VocabularyTopicPage({ params }: Props) {
               <Link href={`/vocabulary/${prevTopic.id}`} className="flex-1">
                 <Card variant="interactive" padding="md">
                   <div className="flex items-center gap-2">
-                    <ChevronLeftIcon size={18} className="text-text-muted flex-shrink-0" />
+                    <ChevronLeftIcon size={18} className="text-text-muted shrink-0" />
                     <div className="min-w-0">
                       <p className="text-xs text-text-muted">Anterior</p>
                       <p className="text-sm font-medium text-text-primary truncate">
@@ -213,7 +227,7 @@ export default function VocabularyTopicPage({ params }: Props) {
                         {nextTopic.emoji} {nextTopic.title}
                       </p>
                     </div>
-                    <ChevronRightIcon size={18} className="text-text-muted flex-shrink-0" />
+                    <ChevronRightIcon size={18} className="text-text-muted shrink-0" />
                   </div>
                 </Card>
               </Link>
