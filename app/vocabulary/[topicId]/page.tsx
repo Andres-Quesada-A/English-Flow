@@ -5,10 +5,11 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Header, BottomNav, Sidebar } from '@/components/layout';
 import { Card, Button } from '@/components/ui';
-import { ChevronLeftIcon, ChevronRightIcon, SpeakerIcon } from '@/components/icons';
+import { ChevronLeftIcon, ChevronRightIcon, SpeakerIcon, PlayIcon } from '@/components/icons';
 import { useProgress } from '@/lib/hooks';
 import { allVocabularyTopics } from '@/lib/data/vocabulary';
 import { getPhonetic, speakText } from '@/lib/utils/phonetics';
+import { FlashcardMode } from '@/components/vocabulary/FlashcardMode';
 
 interface Props {
   params: Promise<{ topicId: string }>;
@@ -20,6 +21,7 @@ export default function VocabularyTopicPage({ params }: Props) {
   const [activeSection, setActiveSection] = useState<number | null>(null);
   const [showExample, setShowExample] = useState(false);
   const [revealedWords, setRevealedWords] = useState<Set<string>>(new Set());
+  const [flashcardMode, setFlashcardMode] = useState(false);
 
   const topic = allVocabularyTopics.find((t) => t.id === topicId);
   if (!topic) notFound();
@@ -46,6 +48,8 @@ export default function VocabularyTopicPage({ params }: Props) {
     ? [topic.sections[activeSection]]
     : topic.sections;
 
+  const flashcardWords = currentSections.flatMap((s) => s.words);
+
   return (
     <div className="min-h-screen bg-background">
       <Header progress={progress ?? undefined} />
@@ -64,46 +68,67 @@ export default function VocabularyTopicPage({ params }: Props) {
 
           {/* Topic header */}
           <div className="mb-6">
-            <div className="flex items-center gap-3 mb-2">
-              <span className="text-4xl">{topic.emoji}</span>
-              <div>
-                <p className="text-xs text-text-muted font-medium uppercase tracking-wider">
-                  Unidad {topic.unitNumber}
-                </p>
-                <h1 className="text-2xl font-bold text-text-primary">{topic.title}</h1>
+            <div className="flex items-start justify-between gap-3 mb-2">
+              <div className="flex items-center gap-3">
+                <span className="text-4xl">{topic.emoji}</span>
+                <div>
+                  <p className="text-xs text-text-muted font-medium uppercase tracking-wider">
+                    Unidad {topic.unitNumber}
+                  </p>
+                  <h1 className="text-2xl font-bold text-text-primary">{topic.title}</h1>
+                </div>
               </div>
+              <button
+                onClick={() => setFlashcardMode(true)}
+                className="shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary text-white text-xs font-semibold hover:bg-primary/90 transition-colors mt-1"
+              >
+                <PlayIcon size={12} />
+                Flashcards
+              </button>
             </div>
             <p className="text-text-secondary text-sm">
               {totalWords} palabras · {topic.sections.length} secciones
             </p>
           </div>
 
-          {/* Section filter */}
-          <div className="flex flex-wrap gap-2 mb-6">
-            <button
-              onClick={() => setActiveSection(null)}
-              className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
-                activeSection === null
-                  ? 'bg-primary text-white'
-                  : 'bg-surface border border-border text-text-secondary hover:border-primary hover:text-primary'
-              }`}
-            >
-              Todas
-            </button>
-            {topic.sections.map((section, idx) => (
-              <button
-                key={idx}
-                onClick={() => setActiveSection(activeSection === idx ? null : idx)}
-                className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
-                  activeSection === idx
-                    ? 'bg-primary text-white'
-                    : 'bg-surface border border-border text-text-secondary hover:border-primary hover:text-primary'
-                }`}
-              >
-                {section.title.split('(')[0].trim()}
-              </button>
-            ))}
-          </div>
+          {/* Flashcard mode */}
+          {flashcardMode && (
+            <FlashcardMode
+              words={flashcardWords}
+              topicId={topic.id}
+              onExit={() => setFlashcardMode(false)}
+            />
+          )}
+
+          {/* List mode */}
+          {!flashcardMode && (
+            <>
+              {/* Section filter */}
+              <div className="flex flex-wrap gap-2 mb-6">
+                <button
+                  onClick={() => setActiveSection(null)}
+                  className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
+                    activeSection === null
+                      ? 'bg-primary text-white'
+                      : 'bg-surface border border-border text-text-secondary hover:border-primary hover:text-primary'
+                  }`}
+                >
+                  Todas
+                </button>
+                {topic.sections.map((section, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setActiveSection(activeSection === idx ? null : idx)}
+                    className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
+                      activeSection === idx
+                        ? 'bg-primary text-white'
+                        : 'bg-surface border border-border text-text-secondary hover:border-primary hover:text-primary'
+                    }`}
+                  >
+                    {section.title.split('(')[0].trim()}
+                  </button>
+                ))}
+              </div>
 
           {/* Vocabulary sections */}
           {currentSections.map((section, sIdx) => (
@@ -160,42 +185,44 @@ export default function VocabularyTopicPage({ params }: Props) {
             </div>
           ))}
 
-          {/* Example text */}
-          {topic.exampleText && (
-            <div className="mb-6">
-              <button
-                onClick={() => setShowExample(!showExample)}
-                className="w-full text-left"
-              >
-                <Card variant="interactive" padding="md">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <span className="text-lg">✍️</span>
-                      <h2 className="font-semibold text-text-primary">Texto de ejemplo</h2>
-                    </div>
-                    <ChevronRightIcon
-                      size={20}
-                      className={`text-text-muted transition-transform ${showExample ? 'rotate-90' : ''}`}
-                    />
-                  </div>
-                  {showExample && (
-                    <div className="mt-4 pt-4 border-t border-border">
-                      <div className="text-sm text-text-secondary leading-relaxed whitespace-pre-line">
-                        {topic.exampleText.split(/\*\*([^*]+)\*\*/).map((part, i) =>
-                          i % 2 === 1 ? (
-                            <strong key={i} className="text-text-primary font-semibold">
-                              {part}
-                            </strong>
-                          ) : (
-                            <span key={i}>{part}</span>
-                          )
-                        )}
+              {/* Example text */}
+              {topic.exampleText && (
+                <div className="mb-6">
+                  <button
+                    onClick={() => setShowExample(!showExample)}
+                    className="w-full text-left"
+                  >
+                    <Card variant="interactive" padding="md">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          <span className="text-lg">✍️</span>
+                          <h2 className="font-semibold text-text-primary">Texto de ejemplo</h2>
+                        </div>
+                        <ChevronRightIcon
+                          size={20}
+                          className={`text-text-muted transition-transform ${showExample ? 'rotate-90' : ''}`}
+                        />
                       </div>
-                    </div>
-                  )}
-                </Card>
-              </button>
-            </div>
+                      {showExample && (
+                        <div className="mt-4 pt-4 border-t border-border">
+                          <div className="text-sm text-text-secondary leading-relaxed whitespace-pre-line">
+                            {topic.exampleText.split(/\*\*([^*]+)\*\*/).map((part, i) =>
+                              i % 2 === 1 ? (
+                                <strong key={i} className="text-text-primary font-semibold">
+                                  {part}
+                                </strong>
+                              ) : (
+                                <span key={i}>{part}</span>
+                              )
+                            )}
+                          </div>
+                        </div>
+                      )}
+                    </Card>
+                  </button>
+                </div>
+              )}
+            </>
           )}
 
           {/* Navigation */}
