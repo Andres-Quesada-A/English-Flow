@@ -5,8 +5,9 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Header, BottomNav, Sidebar } from '@/components/layout';
 import { Card, Button } from '@/components/ui';
-import { ChevronLeftIcon, ChevronRightIcon, SpeakerIcon, PlayIcon } from '@/components/icons';
+import { ChevronLeftIcon, ChevronRightIcon, SpeakerIcon, PlayIcon, CheckIcon } from '@/components/icons';
 import { useProgress } from '@/lib/hooks';
+import { useLearnedWords } from '@/lib/hooks/useLearnedWords';
 import { allVocabularyTopics } from '@/lib/data/vocabulary';
 import { getPhonetic, speakText } from '@/lib/utils/phonetics';
 import { FlashcardMode } from '@/components/vocabulary/FlashcardMode';
@@ -22,6 +23,7 @@ export default function VocabularyTopicPage({ params }: Props) {
   const [showExample, setShowExample] = useState(false);
   const [revealedWords, setRevealedWords] = useState<Set<string>>(new Set());
   const [flashcardMode, setFlashcardMode] = useState(false);
+  const { learned, toggle: toggleLearned, reset: resetLearned, learnedCount } = useLearnedWords(topicId, 0);
 
   const topic = allVocabularyTopics.find((t) => t.id === topicId);
   if (!topic) notFound();
@@ -86,9 +88,24 @@ export default function VocabularyTopicPage({ params }: Props) {
                 Flashcards
               </button>
             </div>
-            <p className="text-text-secondary text-sm">
-              {totalWords} palabras · {topic.sections.length} secciones
-            </p>
+            <div className="flex items-center gap-3 mt-1">
+              <p className="text-text-secondary text-sm">
+                {totalWords} palabras · {topic.sections.length} secciones
+              </p>
+              {learnedCount > 0 && (
+                <span className="text-xs text-success font-medium">
+                  · {learnedCount}/{totalWords} aprendidas
+                </span>
+              )}
+            </div>
+            {learnedCount > 0 && (
+              <div className="mt-2 w-full bg-border-light rounded-full h-1.5 overflow-hidden">
+                <div
+                  className="h-full bg-success rounded-full transition-all duration-500"
+                  style={{ width: `${Math.round((learnedCount / totalWords) * 100)}%` }}
+                />
+              </div>
+            )}
           </div>
 
           {/* Flashcard mode */}
@@ -141,49 +158,78 @@ export default function VocabularyTopicPage({ params }: Props) {
                   {section.words.map((word, wIdx) => {
                     const wordKey = `${sIdx}-${wIdx}`;
                     const isRevealed = revealedWords.has(wordKey);
+                    const isLearned = learned.has(wordKey);
                     const phonetic = getPhonetic(word.english);
                     return (
-                      <button
+                      <div
                         key={wIdx}
-                        onClick={() => toggleReveal(wordKey)}
-                        className="w-full text-left px-4 py-3 hover:bg-border-light transition-colors group"
+                        className={`flex items-center gap-2 px-4 py-3 hover:bg-border-light transition-colors group ${isLearned ? 'opacity-60' : ''}`}
                       >
-                        <div className="flex items-center justify-between gap-4">
-                          <div className="flex-1 min-w-0">
-                            <div className="flex items-center gap-2">
-                              <p className="font-medium text-text-primary text-sm">{word.english}</p>
-                              <button
-                                onClick={(e) => { e.stopPropagation(); speakText(word.english); }}
-                                className="shrink-0 p-1 rounded-full text-text-muted hover:text-primary hover:bg-primary/10 transition-colors"
-                                aria-label={`Escuchar pronunciación de "${word.english}"`}
-                              >
-                                <SpeakerIcon size={13} />
-                              </button>
+                        <button
+                          onClick={(e) => { e.stopPropagation(); toggleLearned(wordKey); }}
+                          className={`shrink-0 w-5 h-5 rounded-full border-2 flex items-center justify-center transition-colors ${
+                            isLearned
+                              ? 'bg-success border-success text-white'
+                              : 'border-border hover:border-success'
+                          }`}
+                          aria-label={isLearned ? 'Marcar como no aprendida' : 'Marcar como aprendida'}
+                        >
+                          {isLearned && <CheckIcon size={11} />}
+                        </button>
+
+                        <button
+                          onClick={() => toggleReveal(wordKey)}
+                          className="flex-1 text-left min-w-0"
+                        >
+                          <div className="flex items-center justify-between gap-4">
+                            <div className="flex-1 min-w-0">
+                              <div className="flex items-center gap-2">
+                                <p className="font-medium text-text-primary text-sm">{word.english}</p>
+                                <button
+                                  onClick={(e) => { e.stopPropagation(); speakText(word.english); }}
+                                  className="shrink-0 p-1 rounded-full text-text-muted hover:text-primary hover:bg-primary/10 transition-colors"
+                                  aria-label={`Escuchar pronunciación de "${word.english}"`}
+                                >
+                                  <SpeakerIcon size={13} />
+                                </button>
+                              </div>
+                              {phonetic && (
+                                <p className="text-xs text-primary/60 font-mono mt-0.5">{phonetic}</p>
+                              )}
+                              {word.example && (
+                                <p className="text-xs text-text-muted mt-0.5 italic">{word.example}</p>
+                              )}
                             </div>
-                            {phonetic && (
-                              <p className="text-xs text-primary/60 font-mono mt-0.5">{phonetic}</p>
-                            )}
-                            {word.example && (
-                              <p className="text-xs text-text-muted mt-0.5 italic">{word.example}</p>
-                            )}
+                            <div className="shrink-0">
+                              {isRevealed ? (
+                                <p className="text-sm text-primary font-medium text-right">{word.spanish}</p>
+                              ) : (
+                                <p className="text-xs text-text-muted group-hover:text-primary transition-colors">
+                                  Ver traducción
+                                </p>
+                              )}
+                            </div>
                           </div>
-                          <div className="shrink-0">
-                            {isRevealed ? (
-                              <p className="text-sm text-primary font-medium text-right">{word.spanish}</p>
-                            ) : (
-                              <p className="text-xs text-text-muted group-hover:text-primary transition-colors">
-                                Ver traducción
-                              </p>
-                            )}
-                          </div>
-                        </div>
-                      </button>
+                        </button>
+                      </div>
                     );
                   })}
                 </div>
               </Card>
             </div>
           ))}
+
+              {/* Reset progress */}
+              {learnedCount > 0 && (
+                <div className="flex justify-end mb-4">
+                  <button
+                    onClick={resetLearned}
+                    className="text-xs text-text-muted hover:text-error transition-colors"
+                  >
+                    Reiniciar progreso
+                  </button>
+                </div>
+              )}
 
               {/* Example text */}
               {topic.exampleText && (
