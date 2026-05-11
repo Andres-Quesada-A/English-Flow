@@ -2,11 +2,12 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { HomeIcon, BookIcon, TargetIcon, UserIcon } from '@/components/icons';
+import { HomeIcon, BookIcon, TargetIcon, UserIcon, VocabularyIcon } from '@/components/icons';
 
 const navItems = [
   { label: 'Home', href: '/', icon: HomeIcon },
   { label: 'Learn', href: '/levels', icon: BookIcon },
+  { label: 'Vocab', href: '/vocabulary', icon: VocabularyIcon },
   { label: 'Practice', href: '/practice', icon: TargetIcon },
   { label: 'Profile', href: '/profile', icon: UserIcon },
 ];

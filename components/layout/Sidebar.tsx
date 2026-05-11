@@ -2,13 +2,14 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { HomeIcon, BookIcon, TargetIcon, UserIcon, TrophyIcon } from '@/components/icons';
+import { HomeIcon, BookIcon, TargetIcon, UserIcon, TrophyIcon, VocabularyIcon } from '@/components/icons';
 import { LEVELS } from '@/lib/constants';
 import type { LevelId } from '@/lib/types';
 
 const mainNavItems = [
   { label: 'Home', href: '/', icon: HomeIcon },
   { label: 'Learn', href: '/levels', icon: BookIcon },
+  { label: 'Vocabulary', href: '/vocabulary', icon: VocabularyIcon },
   { label: 'Practice', href: '/practice', icon: TargetIcon },
   { label: 'Achievements', href: '/achievements', icon: TrophyIcon },
   { label: 'Profile', href: '/profile', icon: UserIcon },
