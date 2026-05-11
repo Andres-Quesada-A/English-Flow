@@ -194,10 +194,20 @@ export default function VocabularyPage() {
                           <Link key={topic.id} href={`/vocabulary/${topic.id}`}>
                             <Card variant="interactive" padding="md" className="h-full">
                               <div className="flex flex-col gap-1">
-                                <div className="flex items-center gap-2 mb-1">
-                                  <span className="text-2xl">{topic.emoji}</span>
-                                  <span className="text-xs text-text-muted font-medium">
-                                    U{topic.unitNumber}
+                                <div className="flex items-center justify-between mb-1">
+                                  <div className="flex items-center gap-2">
+                                    <span className="text-2xl">{topic.emoji}</span>
+                                    <span className="text-xs text-text-muted font-medium">
+                                      U{topic.unitNumber}
+                                    </span>
+                                  </div>
+                                  <span className={`text-xs font-bold px-1.5 py-0.5 rounded ${
+                                    topic.level === 'A1' ? 'bg-level-a1/15 text-level-a1' :
+                                    topic.level === 'A2' ? 'bg-level-a2/15 text-level-a2' :
+                                    topic.level === 'B1' ? 'bg-level-b1/15 text-level-b1' :
+                                    'bg-level-b2/15 text-level-b2'
+                                  }`}>
+                                    {topic.level}
                                   </span>
                                 </div>
                                 <h3 className="text-sm font-semibold text-text-primary leading-tight">

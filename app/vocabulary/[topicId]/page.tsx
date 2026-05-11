@@ -74,9 +74,19 @@ export default function VocabularyTopicPage({ params }: Props) {
               <div className="flex items-center gap-3">
                 <span className="text-4xl">{topic.emoji}</span>
                 <div>
-                  <p className="text-xs text-text-muted font-medium uppercase tracking-wider">
-                    Unidad {topic.unitNumber}
-                  </p>
+                  <div className="flex items-center gap-2 mb-0.5">
+                    <p className="text-xs text-text-muted font-medium uppercase tracking-wider">
+                      Unidad {topic.unitNumber}
+                    </p>
+                    <span className={`text-xs font-bold px-1.5 py-0.5 rounded ${
+                      topic.level === 'A1' ? 'bg-level-a1/15 text-level-a1' :
+                      topic.level === 'A2' ? 'bg-level-a2/15 text-level-a2' :
+                      topic.level === 'B1' ? 'bg-level-b1/15 text-level-b1' :
+                      'bg-level-b2/15 text-level-b2'
+                    }`}>
+                      {topic.level}
+                    </span>
+                  </div>
                   <h1 className="text-2xl font-bold text-text-primary">{topic.title}</h1>
                 </div>
               </div>
@@ -244,10 +254,25 @@ export default function VocabularyTopicPage({ params }: Props) {
                           <span className="text-lg">✍️</span>
                           <h2 className="font-semibold text-text-primary">Texto de ejemplo</h2>
                         </div>
-                        <ChevronRightIcon
-                          size={20}
-                          className={`text-text-muted transition-transform ${showExample ? 'rotate-90' : ''}`}
-                        />
+                        <div className="flex items-center gap-2">
+                          {showExample && (
+                            <button
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                const plain = topic.exampleText!.replace(/\*\*([^*]+)\*\*/g, '$1').replace(/\*([^*]+)\*/g, '$1');
+                                speakText(plain);
+                              }}
+                              className="p-1.5 rounded-full text-text-muted hover:text-primary hover:bg-primary/10 transition-colors"
+                              aria-label="Escuchar texto de ejemplo"
+                            >
+                              <SpeakerIcon size={16} />
+                            </button>
+                          )}
+                          <ChevronRightIcon
+                            size={20}
+                            className={`text-text-muted transition-transform ${showExample ? 'rotate-90' : ''}`}
+                          />
+                        </div>
                       </div>
                       {showExample && (
                         <div className="mt-4 pt-4 border-t border-border">
