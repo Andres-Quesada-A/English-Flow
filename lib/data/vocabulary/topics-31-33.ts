@@ -7,6 +7,7 @@ export const topics31to33: VocabularyTopic[] = [
     title: 'Direcciones y Cómo Moverse',
     emoji: '🗺️',
     category: 'lugares-entorno',
+    level: 'A2',
     sections: [
       {
         title: 'Pedir direcciones (Asking for directions)',
@@ -95,6 +96,7 @@ Thanks to those kind people, I explored the whole city — **by foot**, **by sub
     title: 'Celebraciones y Fiestas',
     emoji: '🎉',
     category: 'ocio-cultura',
+    level: 'A2',
     sections: [
       {
         title: 'Celebraciones y eventos (Celebrations & events)',
@@ -178,6 +180,7 @@ A few days earlier, I had also attended my cousin's **graduation ceremony**. She
     title: 'El Tiempo y La Hora',
     emoji: '🕐',
     category: 'tiempo-clima',
+    level: 'A1',
     sections: [
       {
         title: 'Decir la hora (Telling the time)',

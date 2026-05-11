@@ -7,6 +7,7 @@ export const topics13to30: VocabularyTopic[] = [
     title: 'La Ciudad y sus Lugares',
     emoji: '🏙️',
     category: 'lugares-entorno',
+    level: 'A1',
     sections: [
       {
         title: 'Lugares públicos (Public places)',
@@ -137,6 +138,7 @@ For dinner, I usually go to a **restaurant** **in front of** the **theater**. Af
     title: 'Naturaleza y el Campo',
     emoji: '🌲',
     category: 'lugares-entorno',
+    level: 'A2',
     sections: [
       {
         title: 'Paisajes (Landscapes)',
@@ -233,6 +235,7 @@ That evening, we **camped** under the **stars**. Nature reminded us how beautifu
     title: 'Países y Nacionalidades',
     emoji: '🌍',
     category: 'lugares-entorno',
+    level: 'A1',
     sections: [
       {
         title: 'Continentes (Continents)',
@@ -309,6 +312,7 @@ Last month, we organized an "International Night" at my house. Everyone brought 
     title: 'Medios de Transporte',
     emoji: '🚗',
     category: 'lugares-entorno',
+    level: 'A2',
     sections: [
       {
         title: 'Vehículos terrestres (Land vehicles)',
@@ -395,6 +399,7 @@ After the meeting, I went to the **airport**. I **boarded** the **plane** at six
     title: 'El Clima',
     emoji: '☀️',
     category: 'tiempo-clima',
+    level: 'A2',
     sections: [
       {
         title: 'Tipos de clima (Weather types)',
@@ -485,6 +490,7 @@ By Friday, the **storm** had passed. A beautiful **rainbow** appeared. It was st
     title: 'Profesiones y Oficios',
     emoji: '💼',
     category: 'trabajo-estudio',
+    level: 'A2',
     sections: [
       {
         title: 'Profesiones comunes (Common professions)',
@@ -583,6 +589,7 @@ As for me, I'm still a student. I have a **part-time** job as a **waiter** in a 
     title: 'La Escuela y Materias',
     emoji: '📚',
     category: 'trabajo-estudio',
+    level: 'A2',
     sections: [
       {
         title: 'Centros educativos (Schools)',
@@ -683,6 +690,7 @@ My dream is to get a **scholarship** and go to **university** to study medicine 
     title: 'Tecnología y Computadoras',
     emoji: '💻',
     category: 'trabajo-estudio',
+    level: 'B1',
     sections: [
       {
         title: 'Dispositivos (Devices)',
@@ -777,6 +785,7 @@ I'm careful about **security**: I have a strong **password** for every **account
     title: 'En el Doctor / Enfermedades',
     emoji: '🏥',
     category: 'salud-bienestar',
+    level: 'B1',
     sections: [
       {
         title: 'Profesionales y lugares (Professionals & places)',
@@ -869,6 +878,7 @@ On the way home, we stopped at the **pharmacy**. After three days of rest, my **
     title: 'Deportes y Ejercicio',
     emoji: '⚽',
     category: 'salud-bienestar',
+    level: 'A2',
     sections: [
       {
         title: 'Deportes populares (Popular sports)',
@@ -963,6 +973,7 @@ When the **referee** blew the whistle, we had **won** the **match** 2-1! We were
     title: 'Animales',
     emoji: '🐾',
     category: 'mundo-natural',
+    level: 'A2',
     sections: [
       {
         title: 'Mascotas (Pets)',
@@ -1068,6 +1079,7 @@ Before leaving, I noticed a **butterfly** on a flower and some **ants** carrying
     title: 'Plantas y Naturaleza',
     emoji: '🌿',
     category: 'mundo-natural',
+    level: 'B1',
     sections: [
       {
         title: 'Tipos de plantas (Types of plants)',
@@ -1154,6 +1166,7 @@ Sadly, we found some trash along the path. It made us think about **pollution** 
     title: 'Hobbies y Pasatiempos',
     emoji: '🎮',
     category: 'ocio-cultura',
+    level: 'A2',
     sections: [
       {
         title: 'Artes y manualidades (Arts & crafts)',
@@ -1239,6 +1252,7 @@ As for me, I love **music**. I play the **guitar** in a small **band**. In my sp
     title: 'Viajes y Turismo',
     emoji: '✈️',
     category: 'ocio-cultura',
+    level: 'B1',
     sections: [
       {
         title: 'Tipos de viaje (Types of travel)',
@@ -1325,6 +1339,7 @@ I bought **souvenirs** and **postcards** in every country. This **trip** was an 
     title: 'Colores, Números y Formas',
     emoji: '🎨',
     category: 'vocabulario-fundamental',
+    level: 'A1',
     sections: [
       {
         title: 'Colores (Colors)',
@@ -1404,6 +1419,7 @@ The teacher gave each student a **grade**. I got a 9 out of 10, which is in the 
     title: 'Adjetivos y Opuestos',
     emoji: '📝',
     category: 'vocabulario-fundamental',
+    level: 'A2',
     sections: [
       {
         title: 'Tamaño, calidad y estado',
@@ -1483,6 +1499,7 @@ I bought a **small** book about a **brave** young hero who fights against a **st
     title: 'Verbos Comunes',
     emoji: '⚡',
     category: 'vocabulario-fundamental',
+    level: 'A2',
     sections: [
       {
         title: 'Verbos básicos esenciales (Essential verbs)',
@@ -1580,6 +1597,7 @@ When I **got** home, I **started cooking** dinner. After dinner, I **washed** th
     title: 'Phrasal Verbs',
     emoji: '🔗',
     category: 'vocabulario-fundamental',
+    level: 'B1',
     sections: [
       {
         title: 'Phrasal verbs con GET',

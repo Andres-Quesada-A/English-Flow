@@ -9,12 +9,15 @@ export interface VocabularySection {
   words: VocabularyWord[];
 }
 
+export type CefrLevel = 'A1' | 'A2' | 'B1' | 'B2';
+
 export interface VocabularyTopic {
   id: string;
   unitNumber: number;
   title: string;
   emoji: string;
   category: string;
+  level: CefrLevel;
   sections: VocabularySection[];
   exampleText?: string;
 }
@@ -38,6 +41,7 @@ export const vocabularyTopics: VocabularyTopic[] = [
     title: 'Saludos y Presentaciones',
     emoji: '👋',
     category: 'vida-cotidiana',
+    level: 'A1',
     sections: [
       {
         title: 'Saludos básicos (Basic greetings)',
@@ -150,6 +154,7 @@ export const vocabularyTopics: VocabularyTopic[] = [
     title: 'La Familia y Relaciones',
     emoji: '👨‍👩‍👧‍👦',
     category: 'vida-cotidiana',
+    level: 'A1',
     sections: [
       {
         title: 'Familia directa (Immediate family)',
@@ -288,6 +293,7 @@ Family is the strongest **bond** in life, and I'm grateful to **be born** into s
     title: 'La Casa y los Muebles',
     emoji: '🏠',
     category: 'vida-cotidiana',
+    level: 'A1',
     sections: [
       {
         title: 'Tipos de vivienda (Types of housing)',
@@ -454,6 +460,7 @@ I love to spend the evenings on the **balcony**, looking down at the **garden** 
     title: 'Rutinas Diarias',
     emoji: '📅',
     category: 'vida-cotidiana',
+    level: 'A1',
     sections: [
       {
         title: 'Por la mañana (In the morning)',
@@ -586,6 +593,7 @@ Before bed, I **put on my pajamas**, **brush my teeth** again, and **set the ala
     title: 'Comida y Bebida',
     emoji: '🍽️',
     category: 'vida-cotidiana',
+    level: 'A1',
     sections: [
       {
         title: 'Frutas (Fruits)',
@@ -768,6 +776,7 @@ After **eating**, we feel happy and full. My grandmother says that good food bri
     title: 'Ropa y Accesorios',
     emoji: '👗',
     category: 'vida-cotidiana',
+    level: 'A1',
     sections: [
       {
         title: 'Ropa básica (Basic clothing)',
@@ -906,6 +915,7 @@ Tomorrow morning, I'll **take off** these elegant clothes and **put on** comfort
     title: 'Compras',
     emoji: '🛍️',
     category: 'vida-cotidiana',
+    level: 'A2',
     sections: [
       {
         title: 'Tipos de tiendas (Types of stores)',
@@ -1034,6 +1044,7 @@ By the end of the day, I had **spent** much more than I planned, but I was happy
     title: 'En el Restaurante',
     emoji: '🍴',
     category: 'vida-cotidiana',
+    level: 'A2',
     sections: [
       {
         title: 'Tipos de lugares (Types of places)',
@@ -1187,6 +1198,7 @@ We left the **restaurant** feeling full and happy. It was a perfect night. I alw
     title: 'Partes del Cuerpo',
     emoji: '🦴',
     category: 'personas-cuerpo',
+    level: 'A1',
     sections: [
       {
         title: 'Cabeza (Head)',
@@ -1337,6 +1349,7 @@ On the way home, my **feet** were so tired that I could barely walk. My **toes**
     title: 'Apariencia Física',
     emoji: '👁️',
     category: 'personas-cuerpo',
+    level: 'A2',
     sections: [
       {
         title: 'Altura y constitución (Height & build)',
@@ -1477,6 +1490,7 @@ We may look different, but together we make a great team. Real beauty, after all
     title: 'Personalidad y Carácter',
     emoji: '😊',
     category: 'personas-cuerpo',
+    level: 'A2',
     sections: [
       {
         title: 'Rasgos positivos (Positive traits)',
@@ -1608,6 +1622,7 @@ Every office is full of different characters. The key is learning to work with a
     title: 'Emociones y Sentimientos',
     emoji: '❤️',
     category: 'personas-cuerpo',
+    level: 'A2',
     sections: [
       {
         title: 'Emociones positivas (Positive emotions)',
