@@ -489,8 +489,108 @@ const ipaDict: Record<string, string> = {
   'in front of': '/ɪn frʌnt əv/',
 };
 
+// Ordered phonetic rules: [pattern, IPA]. Longer patterns must come before shorter ones
+// so the first match is also the longest match for any given position.
+const RULES: [string, string][] = [
+  // Suffixes & common endings
+  ['tion',  'ʃən'], ['sion',  'ʒən'], ['ture',  'tʃər'],
+  ['tious', 'ʃəs'], ['cious', 'ʃəs'], ['cial',  'ʃəl'], ['tial', 'ʃəl'],
+  ['ology', 'ɒlədʒi'], ['ment', 'mənt'], ['ness', 'nəs'],
+  ['less',  'ləs'],  ['ful',   'fʊl'],
+  ['ings',  'ɪŋz'],  ['ing',   'ɪŋ'],
+  ['ought', 'ɔːt'],  ['aught', 'ɔːt'], ['ight', 'aɪt'], ['igh', 'aɪ'],
+  ['ough',  'ɒf'],
+  // Consonant clusters & digraphs
+  ['tch',   'tʃ'],  ['dge', 'dʒ'], ['ck', 'k'],
+  ['ph',    'f'],   ['wh',  'w'],  ['sh', 'ʃ'],
+  ['ch',    'tʃ'],  ['th',  'ð'],  ['gh', 'f'],
+  ['ng',    'ŋ'],   ['kn',  'n'],  ['wr', 'r'],
+  ['gn',    'n'],   ['qu',  'kw'], ['sc', 's'], ['ps', 's'],
+  // Vowel digraphs & combinations
+  ['oo',    'uː'],  ['ee', 'iː'],  ['ea', 'iː'], ['ie', 'iː'],
+  ['ai',    'eɪ'],  ['ay', 'eɪ'],  ['oa', 'oʊ'],
+  ['oi',    'ɔɪ'],  ['oy', 'ɔɪ'],
+  ['ou',    'aʊ'],  ['ow', 'aʊ'],
+  ['ew',    'juː'], ['ue', 'uː'],  ['ui', 'uː'],
+  ['au',    'ɔː'],  ['aw', 'ɔː'],
+  // Single vowels
+  ['a', 'æ'], ['e', 'ɛ'], ['i', 'ɪ'], ['o', 'ɒ'], ['u', 'ʌ'], ['y', 'ɪ'],
+  // Single consonants
+  ['b', 'b'], ['c', 'k'], ['d', 'd'], ['f', 'f'], ['g', 'ɡ'],
+  ['h', 'h'], ['j', 'dʒ'],['k', 'k'], ['l', 'l'], ['m', 'm'],
+  ['n', 'n'], ['p', 'p'], ['q', 'k'], ['r', 'r'], ['s', 's'],
+  ['t', 't'], ['v', 'v'], ['w', 'w'], ['x', 'ks'],['z', 'z'],
+];
+
+// Index by first character for faster lookup
+const rulesByFirst = new Map<string, [string, string][]>();
+for (const rule of RULES) {
+  const ch = rule[0][0];
+  if (!rulesByFirst.has(ch)) rulesByFirst.set(ch, []);
+  rulesByFirst.get(ch)!.push(rule);
+}
+
+const MAGIC_E: Record<string, string> = { a: 'eɪ', i: 'aɪ', o: 'oʊ', u: 'juː', e: 'iː' };
+const VOWELS = new Set(['a', 'e', 'i', 'o', 'u']);
+const CONSONANTS = new Set('bcdfghjklmnpqrstvwxyz'.split(''));
+
+function wordToPhonetic(word: string): string {
+  const w = word.toLowerCase().replace(/[^a-z]/g, '');
+  if (!w) return '';
+  const n = w.length;
+  let result = '';
+  let i = 0;
+  let silentE = -1; // position of a magic-E final 'e' to skip
+
+  while (i < n) {
+    // Skip the silent final 'e' from a previously detected magic-E
+    if (i === silentE) { i++; continue; }
+
+    // Magic-E: vowel + 1-3 consonants + final 'e'
+    if (VOWELS.has(w[i]) && MAGIC_E[w[i]]) {
+      let j = i + 1;
+      let cons = 0;
+      while (j < n && CONSONANTS.has(w[j]) && cons < 3) { j++; cons++; }
+      if (cons > 0 && j === n - 1 && w[j] === 'e') {
+        result += MAGIC_E[w[i]];
+        silentE = j; // mark final 'e' to be skipped when we reach it
+        i++;
+        continue;
+      }
+    }
+
+    // Normal rule matching
+    const candidates = rulesByFirst.get(w[i]) ?? [];
+    let matched = false;
+    for (const [pattern, ipa] of candidates) {
+      if (w.startsWith(pattern, i)) {
+        result += ipa;
+        i += pattern.length;
+        matched = true;
+        break;
+      }
+    }
+    if (!matched) { result += w[i]; i++; }
+  }
+
+  return result;
+}
+
+function autoPhonetic(text: string): string {
+  const phonetics = text.split(/\s+/).filter(Boolean).map(wordToPhonetic);
+  return '/' + phonetics.join(' ') + '/';
+}
+
 export function getPhonetic(text: string): string | null {
-  return ipaDict[text.toLowerCase().trim()] ?? null;
+  const key = text.toLowerCase().trim();
+  // Dictionary lookup first (accurate entries)
+  if (ipaDict[key]) return ipaDict[key];
+  // Skip very short words (articles, prepositions already in dict or not useful)
+  if (key.length <= 2) return null;
+  // Skip phrases longer than 4 words (flashcard space constraints)
+  if (key.split(' ').length > 4) return null;
+  // Auto-generate for everything else
+  return autoPhonetic(key);
 }
 
 export function speakText(text: string, lang = 'en-US'): void {
