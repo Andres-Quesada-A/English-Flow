@@ -300,7 +300,6 @@ export const personalTopics: VocabularyTopic[] = [
           { english: 'either', spanish: 'o... o / tampoco / cualquiera de los dos', example: "You can use either Chrome or Firefox. / I don't like it either." },
           { english: 'unpleasant', spanish: 'desagradable', example: 'The meeting had an unpleasant tone.' },
           { english: 'unbothered', spanish: 'sin inmutarse / al que no le afecta', example: 'He stayed unbothered even when the demo crashed.' },
-          { english: 'reclaims', spanish: 'reclama / recupera', example: "The system reclaims unused memory. (escribiste 'reychaims'; no estoy seguro de la palabra)" },
         ],
       },
       {
@@ -347,7 +346,6 @@ export const personalTopics: VocabularyTopic[] = [
         words: [
           { english: 'cuz', spanish: 'porque (informal, forma escrita de "because")', example: "I'm staying home cuz I'm tired." },
           { english: 'goodness', spanish: 'bondad; ¡Dios mío! (my goodness / oh my goodness)', example: 'Oh my goodness, the build finally passed!' },
-          { english: 'pum / pam', spanish: '¡pum! / ¡pam! (onomatopeya de un golpe o explosión)', example: "And then — pum! — the whole server crashed. (onomatopeya, no es una palabra formal)" },
         ],
       },
     ],
