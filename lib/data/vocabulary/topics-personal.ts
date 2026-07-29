@@ -439,6 +439,7 @@ export const personalTopics: VocabularyTopic[] = [
         words: [
           { english: 'swag', spanish: 'estilo / actitud cool (slang); artículos promocionales gratis', example: 'He walks around with so much swag. / We got free swag at the conference.' },
           { english: 'hang out', spanish: 'pasar el rato / juntarse (verbo)', example: "Let's hang out this weekend. / We used to hang out after class." },
+          { english: 'gatekeep', spanish: 'acaparar / negar el acceso a algo (no dejar que otros entren o disfruten)', example: "Don't gatekeep the good tools — share them with the team." },
           { english: 'glide', spanish: 'deslizarse / planear', example: 'The skater glided across the ice. / The plane glided down smoothly.' },
           { english: 'syllable', spanish: 'sílaba', example: "The word 'banana' has three syllables." },
           { english: 'sarcasm', spanish: 'sarcasmo', example: 'He said it with a lot of sarcasm.' },
