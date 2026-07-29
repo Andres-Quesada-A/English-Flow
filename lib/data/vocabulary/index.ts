@@ -35,6 +35,7 @@ export const vocabularyCategories = [
   { id: 'ocio-cultura', title: 'Ocio y Cultura', emoji: '🎭' },
   { id: 'vocabulario-fundamental', title: 'Vocabulario Fundamental', emoji: '🎨' },
   { id: 'mi-vocabulario', title: 'Mi Vocabulario', emoji: '💬' },
+  { id: 'estudio-idioma', title: 'Estudio del Idioma', emoji: '📚' },
 ];
 
 export const vocabularyTopics: VocabularyTopic[] = [
@@ -1821,10 +1822,12 @@ Before I went to bed, I felt **calm** and **peaceful**. Whatever tomorrow brings
 import { topics13to30 } from './topics-13-30';
 import { topics31to33 } from './topics-31-33';
 import { personalTopics } from './topics-personal';
+import { studyTopics } from './topics-study';
 
 export const allVocabularyTopics: VocabularyTopic[] = [
   ...vocabularyTopics,
   ...topics13to30,
   ...topics31to33,
   ...personalTopics,
+  ...studyTopics,
 ];
