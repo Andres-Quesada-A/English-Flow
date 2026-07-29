@@ -10,6 +10,12 @@ export const topics13to30: VocabularyTopic[] = [
     level: 'A1',
     sections: [
       {
+        title: 'Del vocabulario personal (lugares)',
+        words: [
+          { english: 'jail', spanish: 'cárcel', example: 'He spent a night in jail after the fight.' },
+        ],
+      },
+      {
         title: 'Lugares públicos (Public places)',
         words: [
           { english: 'City', spanish: 'Ciudad' },
@@ -140,6 +146,13 @@ For dinner, I usually go to a **restaurant** **in front of** the **theater**. Af
     category: 'lugares-entorno',
     level: 'A2',
     sections: [
+      {
+        title: 'Del vocabulario personal (paisaje)',
+        words: [
+          { english: 'cliff', spanish: 'acantilado / precipicio', example: 'We hiked all the way to the top of the cliff.' },
+          { english: 'bumpy', spanish: 'con baches (también: turbulento)', example: 'The road was really bumpy.' },
+        ],
+      },
       {
         title: 'Paisajes (Landscapes)',
         words: [
@@ -314,6 +327,13 @@ Last month, we organized an "International Night" at my house. Everyone brought 
     category: 'lugares-entorno',
     level: 'A2',
     sections: [
+      {
+        title: 'Del vocabulario personal (carretera)',
+        words: [
+          { english: 'kerb', spanish: 'bordillo / cordón de la acera (inglés británico)', example: 'Mind the kerb when you step off the sidewalk.' },
+          { english: 'curb', spanish: 'bordillo (EE. UU.); también: refrenar / controlar', example: 'The car hit the curb.' },
+        ],
+      },
       {
         title: 'Vehículos terrestres (Land vehicles)',
         words: [
@@ -747,6 +767,16 @@ My dream is to get a **scholarship** and go to **university** to study medicine 
     level: 'B1',
     sections: [
       {
+        title: 'Del vocabulario personal (trabajo)',
+        words: [
+          { english: 'acronym', spanish: 'acrónimo / sigla', example: 'API is an acronym for Application Programming Interface.' },
+          { english: 'quote', spanish: 'cotización / presupuesto (también: cita / citar)', example: 'Can you send me a quote for the project?' },
+          { english: 'proof', spanish: 'prueba / evidencia', example: "Do you have any proof that it's a backend issue?" },
+          { english: 'struggles', spanish: 'dificultades / luchas', example: 'We all have our struggles with the legacy code.' },
+          { english: 'gist', spanish: 'la idea general / lo esencial', example: "I didn't read it all, but I got the gist." },
+        ],
+      },
+      {
         title: 'Dispositivos (Devices)',
         words: [
           { english: 'Computer', spanish: 'Computadora' },
@@ -906,6 +936,16 @@ I'm careful about **security**: I have a strong **password** for every **account
     category: 'salud-bienestar',
     level: 'B1',
     sections: [
+      {
+        title: 'Del vocabulario personal (síntomas)',
+        words: [
+          { english: 'dizzy', spanish: 'mareado', example: 'I feel dizzy after staring at the screen all day.' },
+          { english: 'numb', spanish: 'entumecido / adormecido', example: 'My hand went numb from typing all morning.' },
+          { english: 'itching', spanish: 'picazón / comezón', example: 'My arm is itching from the bite.' },
+          { english: 'headache', spanish: 'dolor de cabeza', example: 'I have a terrible headache today.' },
+          { english: 'harm', spanish: 'daño / hacer daño', example: "It won't do any harm to try." },
+        ],
+      },
       {
         title: 'Profesionales y lugares (Professionals & places)',
         words: [
@@ -1212,6 +1252,15 @@ When the **referee** blew the whistle, we had **won** the **match** 2-1! We were
     level: 'A2',
     sections: [
       {
+        title: 'Del vocabulario personal (animales)',
+        words: [
+          { english: 'sheep', spanish: 'oveja (plural igual: one sheep, two sheep)', example: 'The farmer has a hundred sheep.' },
+          { english: 'eagle', spanish: 'águila', example: 'An eagle flew over the mountains.' },
+          { english: 'crane', spanish: 'grulla (el ave)', example: 'A crane is a tall, elegant bird.' },
+          { english: 'bark', spanish: 'ladrar / ladrido', example: "The dog wouldn't stop barking." },
+        ],
+      },
+      {
         title: 'Mascotas (Pets)',
         words: [
           { english: 'Pet', spanish: 'Mascota' },
@@ -1374,6 +1423,14 @@ Before leaving, I noticed a **butterfly** on a flower and some **ants** carrying
     category: 'mundo-natural',
     level: 'B1',
     sections: [
+      {
+        title: 'Del vocabulario personal (plantas)',
+        words: [
+          { english: 'cacti', spanish: 'cactus (plural)', example: 'There are many cacti in the desert.' },
+          { english: 'cactuses', spanish: 'cactus (plural, forma alternativa)', example: "Both 'cacti' and 'cactuses' are correct plurals." },
+          { english: 'cane', spanish: 'caña (sugar cane = caña de azúcar)', example: 'Sugar cane grows all over this region.' },
+        ],
+      },
       {
         title: 'Tipos de plantas (Types of plants)',
         words: [
@@ -1774,6 +1831,23 @@ The teacher gave each student a **grade**. I got a 9 out of 10, which is in the 
     level: 'A2',
     sections: [
       {
+        title: 'Del vocabulario personal (adjetivos)',
+        words: [
+          { english: 'weird', spanish: 'raro / extraño', example: "That's weird, the code worked yesterday." },
+          { english: 'odd', spanish: 'raro / extraño (también: impar)', example: "It's odd that the server keeps crashing." },
+          { english: 'huge', spanish: 'enorme', example: "That's a huge improvement in performance." },
+          { english: 'tough', spanish: 'duro / difícil', example: 'This was a really tough sprint.' },
+          { english: 'unpleasant', spanish: 'desagradable', example: 'The meeting had an unpleasant tone.' },
+          { english: 'loud', spanish: 'ruidoso / fuerte (de volumen)', example: 'The office is too loud today.' },
+          { english: 'trippy', spanish: 'alucinante / psicodélico', example: 'That animation looks really trippy.' },
+          { english: 'gripping', spanish: 'cautivador / que atrapa', example: "The show was so gripping I couldn't stop watching." },
+          { english: 'nasty', spanish: 'asqueroso / desagradable', example: "There's a nasty smell in the fridge." },
+          { english: 'creepy', spanish: 'espeluznante / que da mala espina', example: 'That new guy gives me a creepy vibe.' },
+          { english: 'annoying', spanish: 'molesto / fastidioso', example: 'This bug is really annoying.' },
+          { english: 'dry', spanish: 'seco', example: 'The cake was a bit dry.' },
+        ],
+      },
+      {
         title: 'Tamaño, calidad y estado',
         words: [
           { english: 'Big / Small', spanish: 'Grande / Pequeño' },
@@ -1853,6 +1927,25 @@ I bought a **small** book about a **brave** young hero who fights against a **st
     category: 'vocabulario-fundamental',
     level: 'A2',
     sections: [
+      {
+        title: 'Del vocabulario personal (verbos)',
+        words: [
+          { english: 'behave', spanish: 'comportarse; funcionar (un sistema)', example: 'Behave yourself in the meeting.' },
+          { english: 'apologize', spanish: 'disculparse / pedir perdón', example: 'You should apologize for that comment.' },
+          { english: 'prove', spanish: 'probar / demostrar', example: 'I can prove the bug is in the API.' },
+          { english: 'squeeze', spanish: 'apretar / exprimir', example: 'Squeeze the lemon into the glass.' },
+          { english: 'dive', spanish: 'zambullirse; meterse de lleno', example: 'He did a perfect dive into the pool.' },
+          { english: 'crawl', spanish: 'gatear / arrastrarse', example: 'The baby learned to crawl.' },
+          { english: 'swear', spanish: 'jurar; decir groserías', example: 'I swear I fixed that bug.' },
+          { english: 'cheat', spanish: 'engañar / hacer trampa', example: 'He cheated on the test.' },
+          { english: 'harm', spanish: 'dañar / hacer daño', example: "Don't harm yourself." },
+          { english: 'dump', spanish: 'botar / tirar; dejar (a la pareja)', example: "Don't dump your trash here." },
+          { english: 'treat', spanish: 'tratar (a alguien); invitar', example: 'You should treat your teammates with respect.' },
+          { english: 'charge', spanish: 'cobrar; cargar (batería)', example: 'How much do they charge for the license?' },
+          { english: 'glide', spanish: 'deslizarse / planear', example: 'The skater glided across the ice.' },
+          { english: 'gatekeep', spanish: 'acaparar / negar el acceso a algo', example: "Don't gatekeep the good tools — share them." },
+        ],
+      },
       {
         title: 'Verbos básicos esenciales (Essential verbs)',
         words: [

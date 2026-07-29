@@ -300,6 +300,15 @@ Family is the strongest **bond** in life, and I'm grateful to **be born** into s
     level: 'A1',
     sections: [
       {
+        title: 'Del vocabulario personal (casa)',
+        words: [
+          { english: 'fridge', spanish: 'refrigeradora / nevera', example: "There's some cake in the fridge if you want it." },
+          { english: 'spatula', spanish: 'espátula', example: 'Use a spatula to flip the pancake.' },
+          { english: 'blankets', spanish: 'cobijas / mantas', example: "It's cold tonight, grab a couple of blankets." },
+          { english: 'brick', spanish: 'ladrillo', example: 'The wall is made of red brick.' },
+        ],
+      },
+      {
         title: 'Tipos de vivienda (Types of housing)',
         words: [
           { english: 'House', spanish: 'Casa', example: 'We just bought a small house in the suburbs.' },
@@ -600,6 +609,25 @@ Before bed, I **put on my pajamas**, **brush my teeth** again, and **set the ala
     level: 'A1',
     sections: [
       {
+        title: 'Del vocabulario personal (comida)',
+        words: [
+          { english: 'cinnamon', spanish: 'canela', example: 'I like a bit of cinnamon in my coffee.' },
+          { english: 'almond', spanish: 'almendra', example: 'I like almond milk in my coffee.' },
+          { english: 'nougat', spanish: 'turrón', example: 'This chocolate bar has nougat inside.' },
+          { english: 'licorice', spanish: 'regaliz', example: "I don't really like the taste of licorice." },
+          { english: 'oatmeal', spanish: 'avena', example: 'I have oatmeal for breakfast almost every day.' },
+          { english: 'meatloaf', spanish: 'pastel de carne', example: 'My grandma makes the best meatloaf.' },
+          { english: 'quiche', spanish: 'quiche (tarta salada)', example: 'We had quiche and salad for lunch.' },
+          { english: 'flavor', spanish: 'sabor', example: 'This coffee has a really strong flavor.' },
+          { english: 'spicy', spanish: 'picante', example: 'This sauce is really spicy.' },
+          { english: 'powder', spanish: 'polvo', example: 'Add two spoons of the protein powder.' },
+          { english: 'crumble', spanish: 'desmoronarse / desmenuzar', example: 'The cookie started to crumble in my hand.' },
+          { english: 'mushy', spanish: 'blando / pastoso', example: 'The vegetables were overcooked and mushy.' },
+          { english: 'spoiled', spanish: 'echado a perder (comida)', example: 'The milk is spoiled, throw it out.' },
+          { english: 'picky eater', spanish: 'quisquilloso para comer', example: 'My son is such a picky eater.' },
+        ],
+      },
+      {
         title: 'Frutas (Fruits)',
         words: [
           { english: 'Apple', spanish: 'Manzana' },
@@ -845,6 +873,12 @@ After **eating**, we feel happy and full. My grandmother says that good food bri
     category: 'vida-cotidiana',
     level: 'A1',
     sections: [
+      {
+        title: 'Del vocabulario personal (accesorios)',
+        words: [
+          { english: 'belt', spanish: 'cinturón', example: 'I need a new belt for these pants.' },
+        ],
+      },
       {
         title: 'Ropa básica (Basic clothing)',
         words: [
@@ -1419,6 +1453,17 @@ On the way home, my **feet** were so tired that I could barely walk. My **toes**
     level: 'A2',
     sections: [
       {
+        title: 'Del vocabulario personal (apariencia)',
+        words: [
+          { english: 'cheek', spanish: 'mejilla', example: 'She kissed him on the cheek.' },
+          { english: 'dimples', spanish: 'hoyuelos', example: 'She has cute dimples when she smiles.' },
+          { english: 'scalp', spanish: 'cuero cabelludo', example: 'The sun burned my scalp.' },
+          { english: 'pimple', spanish: 'grano / espinilla', example: 'I woke up with a huge pimple on my chin.' },
+          { english: 'balding', spanish: 'quedándose calvo', example: "He's balding a little, but he doesn't mind." },
+          { english: 'sunburned', spanish: 'quemado por el sol', example: 'I got sunburned at the beach this weekend.' },
+        ],
+      },
+      {
         title: 'Altura y constitución (Height & build)',
         words: [
           { english: 'Tall', spanish: 'Alto' },
@@ -1559,6 +1604,19 @@ We may look different, but together we make a great team. Real beauty, after all
     category: 'personas-cuerpo',
     level: 'A2',
     sections: [
+      {
+        title: 'Del vocabulario personal (carácter)',
+        words: [
+          { english: 'wise', spanish: 'sabio', example: 'That was a wise decision.' },
+          { english: 'silly', spanish: 'tonto / bobo', example: 'It was a silly mistake, easy to fix.' },
+          { english: 'blunt', spanish: 'directo / sin rodeos', example: 'Sorry to be blunt, but this code is a mess.' },
+          { english: 'immature', spanish: 'inmaduro', example: 'His reaction in the meeting was really immature.' },
+          { english: 'greed', spanish: 'codicia / avaricia', example: 'Greed is probably his biggest flaw.' },
+          { english: 'accurate', spanish: 'preciso / exacto', example: 'The estimate was surprisingly accurate.' },
+          { english: 'unbothered', spanish: 'sin inmutarse / al que no le afecta', example: 'He stayed unbothered even when the demo crashed.' },
+          { english: 'aware', spanish: 'consciente / al tanto', example: 'Are you aware of the new deadline?' },
+        ],
+      },
       {
         title: 'Rasgos positivos (Positive traits)',
         words: [
