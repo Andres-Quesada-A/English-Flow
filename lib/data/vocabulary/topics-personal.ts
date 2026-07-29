@@ -406,6 +406,44 @@ export const personalTopics: VocabularyTopic[] = [
           { english: 'greed', spanish: 'codicia / avaricia', example: 'Greed is probably his biggest flaw.' },
         ],
       },
+      {
+        title: 'Cuerpo y apariencia (Body & appearance)',
+        words: [
+          { english: 'cheek', spanish: 'mejilla (también: descaro / atrevimiento)', example: 'She kissed him on the cheek. / What a cheek! He took my seat.' },
+          { english: 'dimples', spanish: 'hoyuelos', example: 'She has cute dimples when she smiles.' },
+          { english: 'itching', spanish: 'picazón / comezón (también: itching to = morirse de ganas)', example: "My arm is itching from the bite. / I'm itching to start the new project." },
+        ],
+      },
+      {
+        title: 'Calle, objetos y materiales (Street, objects & materials)',
+        words: [
+          { english: 'kerb', spanish: 'bordillo / cordón de la acera (inglés británico)', example: 'Mind the kerb when you step off the sidewalk.' },
+          { english: 'curb', spanish: 'bordillo (EE. UU.); también: refrenar / controlar', example: 'The car hit the curb. / We need to curb our spending.' },
+          { english: 'camber', spanish: 'peralte / curvatura (de una carretera o superficie)', example: 'The road has a slight camber so the rain drains off.' },
+          { english: 'cane', spanish: 'bastón; caña (sugar cane = caña de azúcar)', example: 'My grandfather walks with a cane. / Sugar cane grows here.' },
+          { english: 'sails', spanish: 'velas (de un barco)', example: "The boat's sails caught the wind." },
+          { english: 'nail', spanish: 'uña; clavo (también: "nail it" = clavarla / lograrlo perfecto)', example: 'I broke a nail. / Hammer the nail into the wall. / You totally nailed the presentation!' },
+          { english: 'aid', spanish: 'ayuda / auxilio (first aid = primeros auxilios)', example: 'The Red Cross sent aid. / Do you have a first aid kit?' },
+        ],
+      },
+      {
+        title: 'Naturaleza y animales (Nature & animals)',
+        words: [
+          { english: 'bark', spanish: 'ladrar / ladrido (también: corteza de un árbol)', example: "The dog wouldn't stop barking. / The bark of the tree was rough." },
+          { english: 'eagle', spanish: 'águila', example: 'An eagle flew over the mountains.' },
+          { english: 'nun', spanish: 'monja (¡ojo! suena igual que "none" = ninguno)', example: 'The nun taught at the local school.' },
+        ],
+      },
+      {
+        title: 'Slang y expresiones (Slang & expressions)',
+        words: [
+          { english: 'swag', spanish: 'estilo / actitud cool (slang); artículos promocionales gratis', example: 'He walks around with so much swag. / We got free swag at the conference.' },
+          { english: 'hang out', spanish: 'pasar el rato / juntarse (verbo)', example: "Let's hang out this weekend. / We used to hang out after class." },
+          { english: 'glide', spanish: 'deslizarse / planear', example: "The skater glided across the ice. (escribiste 'glaid'; creo que es 'glide')" },
+          { english: 'syllable', spanish: 'sílaba', example: "The word 'banana' has three syllables. (escribiste 'silable' = syllable)" },
+          { english: 'sarcasm', spanish: 'sarcasmo', example: 'He said it with a lot of sarcasm.' },
+        ],
+      },
     ],
     exampleText: `**Using my words at work**
 
