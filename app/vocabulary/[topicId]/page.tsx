@@ -191,7 +191,7 @@ export default function VocabularyTopicPage({ params }: Props) {
                           onClick={() => toggleReveal(wordKey)}
                           className="flex-1 text-left min-w-0"
                         >
-                          <div className="flex items-center justify-between gap-4">
+                          <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
                             <div className="flex-1 min-w-0">
                               <div className="flex items-center gap-2">
                                 <p className="font-medium text-text-primary text-sm">{word.english}</p>
@@ -209,10 +209,13 @@ export default function VocabularyTopicPage({ params }: Props) {
                               {word.example && (
                                 <p className="text-xs text-text-muted mt-0.5 italic">{word.example}</p>
                               )}
+                              {word.example2 && (
+                                <p className="text-xs text-text-muted mt-0.5 italic">{word.example2}</p>
+                              )}
                             </div>
-                            <div className="shrink-0">
+                            <div className="shrink-0 sm:text-right">
                               {isRevealed ? (
-                                <p className="text-sm text-primary font-medium text-right">{word.spanish}</p>
+                                <p className="text-sm text-primary font-medium sm:text-right">{word.spanish}</p>
                               ) : (
                                 <p className="text-xs text-text-muted group-hover:text-primary transition-colors">
                                   Ver traducción

@@ -2,6 +2,8 @@ export interface VocabularyWord {
   english: string;
   spanish: string;
   example?: string;
+  /** Second example sentence, used when a word has more than one meaning. */
+  example2?: string;
 }
 
 export interface VocabularySection {

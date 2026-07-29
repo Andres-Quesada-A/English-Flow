@@ -487,110 +487,167 @@ const ipaDict: Record<string, string> = {
   'next to': '/nekst tuː/',
   'behind': '/bɪˈhaɪnd/',
   'in front of': '/ɪn frʌnt əv/',
+
+  // Personal vocabulary (hand-verified)
+  'weird': '/wɪrd/',
+  'odd': '/ɒd/',
+  'creepy': '/ˈkriː.pi/',
+  'annoying': '/əˈnɔɪ.ɪŋ/',
+  'whole': '/hoʊl/',
+  'stuff': '/stʌf/',
+  'headache': '/ˈhed.eɪk/',
+  'quint': '/kwɪnt/',
+  'trolling': '/ˈtroʊl.ɪŋ/',
+  'teasing': '/ˈtiː.zɪŋ/',
+  'harassing': '/həˈræs.ɪŋ/',
+  'nerves': '/nɜːrvz/',
+  'behave': '/bɪˈheɪv/',
+  'treat': '/triːt/',
+  'apologize': '/əˈpɒl.ə.dʒaɪz/',
+  'proof': '/pruːf/',
+  'prove': '/pruːv/',
+  'quote': '/kwoʊt/',
+  'thought': '/θɔːt/',
+  'otherwise': '/ˈʌð.ər.waɪz/',
+  'slipped': '/slɪpt/',
+  'sear': '/sɪr/',
+  'damn': '/dæm/',
+  'dumbass': '/ˈdʌm.æs/',
+  'struggles': '/ˈstrʌɡ.əlz/',
+  'charge': '/tʃɑːrdʒ/',
+  'aware': '/əˈwer/',
+  'gestures': '/ˈdʒes.tʃərz/',
+  'loud': '/laʊd/',
+  'gist': '/dʒɪst/',
+  'bunch': '/bʌntʃ/',
+  'acronym': '/ˈæk.rə.nɪm/',
+  'huge': '/hjuːdʒ/',
+  'either': '/ˈiː.ðər/',
+  'unpleasant': '/ʌnˈplez.ənt/',
+  'unbothered': '/ʌnˈbɒð.ərd/',
+  'dizzy': '/ˈdɪz.i/',
+  'numb': '/nʌm/',
+  'squeeze': '/skwiːz/',
+  'gripping': '/ˈɡrɪp.ɪŋ/',
+  'sunburned': '/ˈsʌn.bɜːrnd/',
+  'scalp': '/skælp/',
+  'balding': '/ˈbɔːl.dɪŋ/',
+  'tough': '/tʌf/',
+  'flavor': '/ˈfleɪ.vər/',
+  'oatmeal': '/ˈoʊt.miːl/',
+  'almond': '/ˈɑː.mənd/',
+  'nougat': '/ˈnuː.ɡət/',
+  'licorice': '/ˈlɪk.ər.ɪʃ/',
+  'delight': '/dɪˈlaɪt/',
+  'starve to death': '/stɑːrv tə deθ/',
+  'spicy': '/ˈspaɪ.si/',
+  'cacti': '/ˈkæk.taɪ/',
+  'cactuses': '/ˈkæk.tə.sɪz/',
+  'cliff': '/klɪf/',
+  'fridge': '/frɪdʒ/',
+  'bumpy': '/ˈbʌm.pi/',
+  'trippy': '/ˈtrɪp.i/',
+  'spatula': '/ˈspætʃ.ə.lə/',
+  'stash': '/stæʃ/',
+  'cuz': '/kʌz/',
+  'goodness': '/ˈɡʊd.nəs/',
+  'stan': '/stæn/',
+  'hangout': '/ˈhæŋ.aʊt/',
+  'hang out': '/hæŋ aʊt/',
+  'picky eater': '/ˈpɪk.i ˈiː.tər/',
+  'cinnamon': '/ˈsɪn.ə.mən/',
+  'quiche': '/kiːʃ/',
+  'meatloaf': '/ˈmiːt.loʊf/',
+  'mushy': '/ˈmʌʃ.i/',
+  'dry': '/draɪ/',
+  'spoiled': '/spɔɪld/',
+  'powder': '/ˈpaʊ.dər/',
+  'crumble': '/ˈkrʌm.bəl/',
+  'puff': '/pʌf/',
+  'blankets': '/ˈblæŋ.kɪts/',
+  'crane': '/kreɪn/',
+  'brick': '/brɪk/',
+  'jail': '/dʒeɪl/',
+  'belt': '/belt/',
+  'sheep': '/ʃiːp/',
+  'dump': '/dʌmp/',
+  'dive': '/daɪv/',
+  'crawl': '/krɔːl/',
+  'pimple': '/ˈpɪm.pəl/',
+  'nasty': '/ˈnæs.ti/',
+  'ick': '/ɪk/',
+  'harm': '/hɑːrm/',
+  'accurate': '/ˈæk.jər.ət/',
+  'blunt': '/blʌnt/',
+  'immature': '/ˌɪm.əˈtʃʊr/',
+  'wise': '/waɪz/',
+  'silly': '/ˈsɪl.i/',
+  'flaws': '/flɔːz/',
+  'misunderstandings': '/ˌmɪs.ʌn.dərˈstæn.dɪŋz/',
+  'swear': '/swer/',
+  'cheat': '/tʃiːt/',
+  'yap': '/jæp/',
+  'idk': '/ˌaɪ.diːˈkeɪ/',
+  'greed': '/ɡriːd/',
+  'cheek': '/tʃiːk/',
+  'dimples': '/ˈdɪm.pəlz/',
+  'itching': '/ˈɪtʃ.ɪŋ/',
+  'kerb': '/kɜːrb/',
+  'curb': '/kɜːrb/',
+  'camber': '/ˈkæm.bər/',
+  'cane': '/keɪn/',
+  'sails': '/seɪlz/',
+  'nail': '/neɪl/',
+  'aid': '/eɪd/',
+  'bark': '/bɑːrk/',
+  'eagle': '/ˈiː.ɡəl/',
+  'nun': '/nʌn/',
+  'swag': '/swæɡ/',
+  'gatekeep': '/ˈɡeɪt.kiːp/',
+  'glide': '/ɡlaɪd/',
+  'syllable': '/ˈsɪl.ə.bəl/',
+  'sarcasm': '/ˈsɑːr.kæz.əm/',
 };
-
-// Ordered phonetic rules: [pattern, IPA]. Longer patterns must come before shorter ones
-// so the first match is also the longest match for any given position.
-const RULES: [string, string][] = [
-  // Suffixes & common endings
-  ['tion',  'ʃən'], ['sion',  'ʒən'], ['ture',  'tʃər'],
-  ['tious', 'ʃəs'], ['cious', 'ʃəs'], ['cial',  'ʃəl'], ['tial', 'ʃəl'],
-  ['ology', 'ɒlədʒi'], ['ment', 'mənt'], ['ness', 'nəs'],
-  ['less',  'ləs'],  ['ful',   'fʊl'],
-  ['ings',  'ɪŋz'],  ['ing',   'ɪŋ'],
-  ['ought', 'ɔːt'],  ['aught', 'ɔːt'], ['ight', 'aɪt'], ['igh', 'aɪ'],
-  ['ough',  'ɒf'],
-  // Consonant clusters & digraphs
-  ['tch',   'tʃ'],  ['dge', 'dʒ'], ['ck', 'k'],
-  ['ph',    'f'],   ['wh',  'w'],  ['sh', 'ʃ'],
-  ['ch',    'tʃ'],  ['th',  'ð'],  ['gh', 'f'],
-  ['ng',    'ŋ'],   ['kn',  'n'],  ['wr', 'r'],
-  ['gn',    'n'],   ['qu',  'kw'], ['sc', 's'], ['ps', 's'],
-  // Vowel digraphs & combinations
-  ['oo',    'uː'],  ['ee', 'iː'],  ['ea', 'iː'], ['ie', 'iː'],
-  ['ai',    'eɪ'],  ['ay', 'eɪ'],  ['oa', 'oʊ'],
-  ['oi',    'ɔɪ'],  ['oy', 'ɔɪ'],
-  ['ou',    'aʊ'],  ['ow', 'aʊ'],
-  ['ew',    'juː'], ['ue', 'uː'],  ['ui', 'uː'],
-  ['au',    'ɔː'],  ['aw', 'ɔː'],
-  // Single vowels
-  ['a', 'æ'], ['e', 'ɛ'], ['i', 'ɪ'], ['o', 'ɒ'], ['u', 'ʌ'], ['y', 'ɪ'],
-  // Single consonants
-  ['b', 'b'], ['c', 'k'], ['d', 'd'], ['f', 'f'], ['g', 'ɡ'],
-  ['h', 'h'], ['j', 'dʒ'],['k', 'k'], ['l', 'l'], ['m', 'm'],
-  ['n', 'n'], ['p', 'p'], ['q', 'k'], ['r', 'r'], ['s', 's'],
-  ['t', 't'], ['v', 'v'], ['w', 'w'], ['x', 'ks'],['z', 'z'],
-];
-
-// Index by first character for faster lookup
-const rulesByFirst = new Map<string, [string, string][]>();
-for (const rule of RULES) {
-  const ch = rule[0][0];
-  if (!rulesByFirst.has(ch)) rulesByFirst.set(ch, []);
-  rulesByFirst.get(ch)!.push(rule);
-}
-
-const MAGIC_E: Record<string, string> = { a: 'eɪ', i: 'aɪ', o: 'oʊ', u: 'juː', e: 'iː' };
-const VOWELS = new Set(['a', 'e', 'i', 'o', 'u']);
-const CONSONANTS = new Set('bcdfghjklmnpqrstvwxyz'.split(''));
-
-function wordToPhonetic(word: string): string {
-  const w = word.toLowerCase().replace(/[^a-z]/g, '');
-  if (!w) return '';
-  const n = w.length;
-  let result = '';
-  let i = 0;
-  let silentE = -1; // position of a magic-E final 'e' to skip
-
-  while (i < n) {
-    // Skip the silent final 'e' from a previously detected magic-E
-    if (i === silentE) { i++; continue; }
-
-    // Magic-E: vowel + 1-3 consonants + final 'e'
-    if (VOWELS.has(w[i]) && MAGIC_E[w[i]]) {
-      let j = i + 1;
-      let cons = 0;
-      while (j < n && CONSONANTS.has(w[j]) && cons < 3) { j++; cons++; }
-      if (cons > 0 && j === n - 1 && w[j] === 'e') {
-        result += MAGIC_E[w[i]];
-        silentE = j; // mark final 'e' to be skipped when we reach it
-        i++;
-        continue;
-      }
-    }
-
-    // Normal rule matching
-    const candidates = rulesByFirst.get(w[i]) ?? [];
-    let matched = false;
-    for (const [pattern, ipa] of candidates) {
-      if (w.startsWith(pattern, i)) {
-        result += ipa;
-        i += pattern.length;
-        matched = true;
-        break;
-      }
-    }
-    if (!matched) { result += w[i]; i++; }
-  }
-
-  return result;
-}
-
-function autoPhonetic(text: string): string {
-  const phonetics = text.split(/\s+/).filter(Boolean).map(wordToPhonetic);
-  return '/' + phonetics.join(' ') + '/';
-}
 
 export function getPhonetic(text: string): string | null {
   const key = text.toLowerCase().trim();
-  // Dictionary lookup first (accurate entries)
-  if (ipaDict[key]) return ipaDict[key];
-  // Skip very short words (articles, prepositions already in dict or not useful)
-  if (key.length <= 2) return null;
-  // Skip phrases longer than 4 words (flashcard space constraints)
-  if (key.split(' ').length > 4) return null;
-  // Auto-generate for everything else
-  return autoPhonetic(key);
+  // Only return hand-verified transcriptions. We intentionally do NOT
+  // auto-generate IPA: a rule-based guess is wrong for most English words,
+  // and showing an incorrect transcription is worse than showing none.
+  return ipaDict[key] ?? null;
+}
+
+// --- Voice selection (global) -------------------------------------------------
+
+const VOICE_STORAGE_KEY = 'ef-voice-uri';
+
+/** Read the globally selected voice URI (persisted in localStorage). */
+export function getSelectedVoiceURI(): string | null {
+  if (typeof window === 'undefined') return null;
+  try {
+    return window.localStorage.getItem(VOICE_STORAGE_KEY);
+  } catch {
+    return null;
+  }
+}
+
+/** Persist the globally selected voice URI. Empty string clears it (system default). */
+export function setSelectedVoiceURI(uri: string | null): void {
+  if (typeof window === 'undefined') return;
+  try {
+    if (uri) window.localStorage.setItem(VOICE_STORAGE_KEY, uri);
+    else window.localStorage.removeItem(VOICE_STORAGE_KEY);
+  } catch {
+    /* ignore */
+  }
+}
+
+/** List the available English text-to-speech voices in this browser. */
+export function getEnglishVoices(): SpeechSynthesisVoice[] {
+  if (typeof window === 'undefined' || !window.speechSynthesis) return [];
+  return window.speechSynthesis
+    .getVoices()
+    .filter((v) => v.lang.toLowerCase().startsWith('en'));
 }
 
 export function speakText(text: string, lang = 'en-US'): void {
@@ -600,5 +657,16 @@ export function speakText(text: string, lang = 'en-US'): void {
   utterance.lang = lang;
   utterance.rate = 0.85;
   utterance.pitch = 1;
+
+  // Apply the globally selected voice if it is available.
+  const uri = getSelectedVoiceURI();
+  if (uri) {
+    const voice = window.speechSynthesis.getVoices().find((v) => v.voiceURI === uri);
+    if (voice) {
+      utterance.voice = voice;
+      utterance.lang = voice.lang;
+    }
+  }
+
   window.speechSynthesis.speak(utterance);
 }

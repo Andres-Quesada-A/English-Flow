@@ -15,6 +15,7 @@ import {
 import { useProgress } from '@/lib/hooks';
 import { LEVELS, ACHIEVEMENTS } from '@/lib/constants';
 import { getLevelGradientClass, formatRelativeTime } from '@/lib/utils';
+import { VoiceSelector } from '@/components/settings/VoiceSelector';
 
 export default function ProfilePage() {
   const { progress, isLoading, reset } = useProgress();
@@ -166,6 +167,10 @@ export default function ProfilePage() {
                 </div>
                 <span className="text-sm text-text-muted capitalize">{progress.settings.theme}</span>
               </div>
+
+              <hr className="border-border" />
+
+              <VoiceSelector />
 
               <hr className="border-border" />
 

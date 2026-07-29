@@ -210,6 +210,11 @@ export function FlashcardMode({ words, topicId, onExit }: FlashcardModeProps) {
                 &ldquo;{current.example}&rdquo;
               </p>
             )}
+            {current?.example2 && (
+              <p className="text-sm text-text-secondary italic text-center leading-relaxed">
+                &ldquo;{current.example2}&rdquo;
+              </p>
+            )}
             <button
               onClick={(e) => {
                 e.stopPropagation();
