@@ -252,7 +252,7 @@ export const personalTopics: VocabularyTopic[] = [
           { english: 'whole', spanish: 'entero / todo', example: 'I spent the whole day debugging one function.' },
           { english: 'stuff', spanish: 'cosas', example: 'I still have a lot of stuff to finish before Friday.' },
           { english: 'headache', spanish: 'dolor de cabeza (también: algo complicado)', example: 'This legacy code is a real headache to maintain.' },
-          { english: 'quint', spanish: 'quintillizo (uno de cinco hermanos)', example: "The famous quints just turned five. (escribiste 'quint'; ¿quizás 'quaint' = pintoresco/con encanto?)" },
+          { english: 'quint', spanish: 'quintillizo (uno de cinco hermanos)', example: 'The famous quints just turned five years old.' },
         ],
       },
       {
@@ -276,7 +276,7 @@ export const personalTopics: VocabularyTopic[] = [
           { english: 'thought', spanish: 'idea / pensamiento (también: pensé, pasado de "think")', example: "That's a good thought, let's try it. / I thought so." },
           { english: 'otherwise', spanish: 'de lo contrario / si no', example: 'Fix the failing tests, otherwise the build stays broken.' },
           { english: 'slipped', spanish: 'resbaló / se escapó (pasado de "slip")', example: 'It slipped my mind to reply to your email. (se me olvidó) / He slipped on the wet floor.' },
-          { english: 'sear', spanish: 'dorar / sellar (carne); abrasar, chamuscar', example: 'Sear the meat on high heat for two minutes. (Nota: ¿quizás quisiste "swear" = jurar / decir groserías?)' },
+          { english: 'sear', spanish: 'dorar / sellar (carne); abrasar, chamuscar', example: 'Sear the meat on high heat for two minutes.' },
         ],
       },
       {
@@ -313,7 +313,7 @@ export const personalTopics: VocabularyTopic[] = [
           { english: 'sunburned', spanish: 'quemado por el sol', example: 'I got sunburned at the beach this weekend.' },
           { english: 'scalp', spanish: 'cuero cabelludo', example: 'The sun burned my scalp because I forgot a hat.' },
           { english: 'balding', spanish: 'quedándose calvo', example: "He's balding a little, but he doesn't mind." },
-          { english: 'tough', spanish: 'duro / difícil', example: "This was a tough sprint. (escribiste 'tought'; ¿quizás 'taught' = enseñó?)" },
+          { english: 'tough', spanish: 'duro / difícil', example: 'This was a really tough sprint.' },
         ],
       },
       {
@@ -326,7 +326,7 @@ export const personalTopics: VocabularyTopic[] = [
           { english: 'licorice', spanish: 'regaliz', example: "I don't really like the taste of licorice." },
           { english: 'delight', spanish: 'deleite / encanto', example: 'The dessert was an absolute delight.' },
           { english: 'starve to death', spanish: 'morir de hambre', example: "Let's get lunch, I'm starving to death." },
-          { english: 'spicy', spanish: 'picante', example: "This sauce is really spicy. (escribiste 'spitzy'; creo que es 'spicy')" },
+          { english: 'spicy', spanish: 'picante', example: 'This sauce is really spicy.' },
         ],
       },
       {
@@ -338,8 +338,8 @@ export const personalTopics: VocabularyTopic[] = [
           { english: 'fridge', spanish: 'refrigeradora / nevera', example: "There's some cake in the fridge if you want it." },
           { english: 'bumpy', spanish: 'con baches / lleno de baches (también: turbulento)', example: 'The road was really bumpy. / It was a bumpy flight.' },
           { english: 'trippy', spanish: 'alucinante / psicodélico', example: 'That animation looks really trippy.' },
-          { english: 'spatula', spanish: 'espátula', example: "Use a spatula to flip it. (escribiste 'spatcal'; ¿quizás 'spatula'?)" },
-          { english: 'stash', spanish: 'reserva / escondite (guardar algo)', example: "He keeps a secret stash of snacks in his desk. (escribiste 'stach'; ¿o 'stache' = bigote?)" },
+          { english: 'spatula', spanish: 'espátula', example: 'Use a spatula to flip the pancake.' },
+          { english: 'stash', spanish: 'reserva / escondite (guardar algo)', example: 'He keeps a secret stash of snacks in his desk.' },
         ],
       },
       {
@@ -382,7 +382,7 @@ export const personalTopics: VocabularyTopic[] = [
         title: 'Movimiento y cuerpo (Movement & body)',
         words: [
           { english: 'dive', spanish: 'clavado / zambullirse (también: bucear)', example: "He did a perfect dive into the pool. / Let's dive into the code." },
-          { english: 'crawl', spanish: 'gatear / arrastrarse (también: avanzar muy lento)', example: "The baby learned to crawl. / Traffic is crawling today. (escribiste 'craw'; creo que es 'crawl')" },
+          { english: 'crawl', spanish: 'gatear / arrastrarse (también: avanzar muy lento)', example: 'The baby learned to crawl. / Traffic is crawling today.' },
           { english: 'pimple', spanish: 'grano / espinilla', example: 'I woke up with a huge pimple on my chin.' },
           { english: 'nasty', spanish: 'asqueroso / desagradable', example: "There's a nasty smell in the fridge. / He left a nasty comment on my PR." },
           { english: 'ick', spanish: 'asco / repelús ("the ick" = repulsión repentina)', example: 'Ew, ick! / She caught the ick and stopped liking him.' },
@@ -399,7 +399,7 @@ export const personalTopics: VocabularyTopic[] = [
           { english: 'silly', spanish: 'tonto / bobo', example: 'It was a silly mistake, easy to fix.' },
           { english: 'flaws', spanish: 'defectos / fallas', example: 'Every plan has its flaws.' },
           { english: 'misunderstandings', spanish: 'malentendidos', example: "Let's talk it through to avoid misunderstandings." },
-          { english: 'swear', spanish: 'jurar / decir groserías', example: "I swear I fixed that bug. / Try not to swear in the meeting. (esto confirma tu 'sear' de antes)" },
+          { english: 'swear', spanish: 'jurar / decir groserías', example: 'I swear I fixed that bug. / Try not to swear in the meeting.' },
           { english: 'cheat', spanish: 'engañar / hacer trampa', example: "He cheated on the test. / Don't try to cheat the system." },
           { english: 'yap', spanish: 'parlotear / hablar mucho (también: ladrar)', example: "He won't stop yapping about his new car." },
           { english: 'idk', spanish: 'no sé ("I don\'t know", abreviatura de chat)', example: 'idk, maybe we should ask the team first.' },
@@ -439,8 +439,8 @@ export const personalTopics: VocabularyTopic[] = [
         words: [
           { english: 'swag', spanish: 'estilo / actitud cool (slang); artículos promocionales gratis', example: 'He walks around with so much swag. / We got free swag at the conference.' },
           { english: 'hang out', spanish: 'pasar el rato / juntarse (verbo)', example: "Let's hang out this weekend. / We used to hang out after class." },
-          { english: 'glide', spanish: 'deslizarse / planear', example: "The skater glided across the ice. (escribiste 'glaid'; creo que es 'glide')" },
-          { english: 'syllable', spanish: 'sílaba', example: "The word 'banana' has three syllables. (escribiste 'silable' = syllable)" },
+          { english: 'glide', spanish: 'deslizarse / planear', example: 'The skater glided across the ice. / The plane glided down smoothly.' },
+          { english: 'syllable', spanish: 'sílaba', example: "The word 'banana' has three syllables." },
           { english: 'sarcasm', spanish: 'sarcasmo', example: 'He said it with a lot of sarcasm.' },
         ],
       },
