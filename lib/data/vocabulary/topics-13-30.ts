@@ -12,6 +12,8 @@ export const topics13to30: VocabularyTopic[] = [
       {
         title: 'Del vocabulario personal (lugares)',
         words: [
+          { english: 'fountain', spanish: 'fuente (de agua)', example: 'We threw a coin into the fountain.' },
+          { english: 'cathedral', spanish: 'catedral', example: 'The cathedral in the old town is beautiful.' },
           { english: 'jail', spanish: 'cárcel', example: 'He spent a night in jail after the fight.' },
         ],
       },
@@ -769,6 +771,7 @@ My dream is to get a **scholarship** and go to **university** to study medicine 
       {
         title: 'Del vocabulario personal (trabajo)',
         words: [
+          { english: 'glitching', spanish: 'fallando / con fallos (glitch = falla técnica)', example: 'The screen keeps glitching during the call.' },
           { english: 'acronym', spanish: 'acrónimo / sigla', example: 'API is an acronym for Application Programming Interface.' },
           { english: 'quote', spanish: 'cotización / presupuesto (también: cita / citar)', example: 'Can you send me a quote for the project?' },
           { english: 'proof', spanish: 'prueba / evidencia', example: "Do you have any proof that it's a backend issue?" },
@@ -1254,6 +1257,9 @@ When the **referee** blew the whistle, we had **won** the **match** 2-1! We were
       {
         title: 'Del vocabulario personal (animales)',
         words: [
+          { english: 'stallions', spanish: 'sementales / caballos (stallion = caballo macho)', example: 'Two wild stallions ran across the field.' },
+          { english: 'pigeons', spanish: 'palomas', example: 'The pigeons gathered around the old man with bread.' },
+          { english: 'goldfish', spanish: 'pez dorado / pececito de colores', example: 'My daughter won a goldfish at the fair.' },
           { english: 'sheep', spanish: 'oveja (plural igual: one sheep, two sheep)', example: 'The farmer has a hundred sheep.' },
           { english: 'eagle', spanish: 'águila', example: 'An eagle flew over the mountains.' },
           { english: 'crane', spanish: 'grulla (el ave)', example: 'A crane is a tall, elegant bird.' },
@@ -1833,6 +1839,8 @@ The teacher gave each student a **grade**. I got a 9 out of 10, which is in the 
       {
         title: 'Del vocabulario personal (adjetivos)',
         words: [
+          { english: 'fancy', spanish: 'elegante / lujoso / sofisticado', example: 'We went to a fancy restaurant for her birthday.' },
+          { english: 'tiny', spanish: 'diminuto / minúsculo', example: 'There is a tiny bug in this function.' },
           { english: 'weird', spanish: 'raro / extraño', example: "That's weird, the code worked yesterday." },
           { english: 'odd', spanish: 'raro / extraño (también: impar)', example: "It's odd that the server keeps crashing." },
           { english: 'huge', spanish: 'enorme', example: "That's a huge improvement in performance." },
@@ -1930,6 +1938,7 @@ I bought a **small** book about a **brave** young hero who fights against a **st
       {
         title: 'Del vocabulario personal (verbos)',
         words: [
+          { english: 'licking', spanish: 'lamiendo (lick = lamer)', example: 'The dog was licking my hand.' },
           { english: 'behave', spanish: 'comportarse; funcionar (un sistema)', example: 'Behave yourself in the meeting.' },
           { english: 'apologize', spanish: 'disculparse / pedir perdón', example: 'You should apologize for that comment.' },
           { english: 'prove', spanish: 'probar / demostrar', example: 'I can prove the bug is in the API.' },

@@ -245,6 +245,8 @@ export const personalTopics: VocabularyTopic[] = [
       {
         title: 'Describir cosas y situaciones (Describing things)',
         words: [
+          { english: 'fancy', spanish: 'elegante / lujoso / sofisticado', example: 'We went to a fancy restaurant for her birthday.' },
+          { english: 'tiny', spanish: 'diminuto / minúsculo', example: 'There is a tiny bug in this function.' },
           { english: 'weird', spanish: 'raro / extraño', example: "That's weird, the code worked perfectly yesterday." },
           { english: 'odd', spanish: 'raro / extraño (también: impar)', example: "It's odd that the server keeps crashing at night. (an odd number = un número impar)" },
           { english: 'creepy', spanish: 'espeluznante / que da mala espina', example: 'That new guy gives me a creepy vibe.' },
@@ -332,6 +334,9 @@ export const personalTopics: VocabularyTopic[] = [
       {
         title: 'Naturaleza, lugares y objetos (Nature, places & things)',
         words: [
+          { english: 'fountain', spanish: 'fuente (de agua)', example: 'We threw a coin into the fountain.' },
+          { english: 'cathedral', spanish: 'catedral', example: 'The cathedral in the old town is beautiful.' },
+          { english: 'matches', spanish: '3 significados: 1) fósforos / cerillas · 2) partidos (deporte) · 3) coincide (match)', example: 'I need matches to light the candles.', example2: 'We watched two football matches this weekend.' },
           { english: 'cacti', spanish: 'cactus (plural)', example: 'There are many cacti in the desert.' },
           { english: 'cactuses', spanish: 'cactus (plural, forma alternativa)', example: "Both 'cacti' and 'cactuses' are correct plurals." },
           { english: 'cliff', spanish: 'acantilado / precipicio', example: 'We hiked all the way to the top of the cliff.' },
@@ -345,6 +350,7 @@ export const personalTopics: VocabularyTopic[] = [
       {
         title: 'Expresiones informales (Informal expressions)',
         words: [
+          { english: 'granny', spanish: 'abuela / abuelita (informal)', example: 'I visit my granny every Sunday.' },
           { english: 'cuz', spanish: 'porque (informal, forma escrita de "because")', example: "I'm staying home cuz I'm tired." },
           { english: 'goodness', spanish: 'bondad; ¡Dios mío! (my goodness / oh my goodness)', example: 'Oh my goodness, the build finally passed!' },
           { english: 'stan', spanish: 'ser fan acérrimo / idolatrar (slang)', example: "I totally stan that band. / He's a huge stan of the show." },
@@ -354,6 +360,7 @@ export const personalTopics: VocabularyTopic[] = [
       {
         title: 'Comida y cocina (Food & cooking)',
         words: [
+          { english: 'schnitzel', spanish: 'schnitzel / milanesa (escalope empanizado)', example: 'I ordered a chicken schnitzel with fries.' },
           { english: 'picky eater', spanish: 'quisquilloso para comer', example: 'My son is such a picky eater, he only eats pasta.' },
           { english: 'cinnamon', spanish: 'canela', example: 'I like a bit of cinnamon in my coffee.' },
           { english: 'quiche', spanish: 'quiche (tarta salada)', example: 'We had quiche and salad for lunch.' },
@@ -381,6 +388,7 @@ export const personalTopics: VocabularyTopic[] = [
       {
         title: 'Movimiento y cuerpo (Movement & body)',
         words: [
+          { english: 'licking', spanish: 'lamiendo (lick = lamer)', example: 'The dog was licking my hand.' },
           { english: 'dive', spanish: '2 significados: 1) clavado / zambullirse · 2) meterse de lleno en algo', example: 'He did a perfect dive into the pool.', example2: "Let's dive into the code." },
           { english: 'crawl', spanish: '2 significados: 1) gatear / arrastrarse · 2) avanzar muy lento', example: 'The baby learned to crawl.', example2: 'Traffic is crawling today.' },
           { english: 'pimple', spanish: 'grano / espinilla', example: 'I woke up with a huge pimple on my chin.' },
@@ -409,6 +417,8 @@ export const personalTopics: VocabularyTopic[] = [
       {
         title: 'Cuerpo y apariencia (Body & appearance)',
         words: [
+          { english: 'forehead', spanish: 'frente (parte de la cara)', example: 'She has a small scar on her forehead.' },
+          { english: 'freckles', spanish: 'pecas', example: 'He has freckles all over his nose and cheeks.' },
           { english: 'cheek', spanish: '2 significados: 1) mejilla · 2) descaro / atrevimiento', example: 'She kissed him on the cheek.', example2: 'What a cheek! He took my seat.' },
           { english: 'dimples', spanish: 'hoyuelos', example: 'She has cute dimples when she smiles.' },
           { english: 'itching', spanish: '2 significados: 1) picazón / comezón · 2) morirse de ganas ("itching to")', example: 'My arm is itching from the bite.', example2: "I'm itching to start the new project." },
@@ -429,6 +439,9 @@ export const personalTopics: VocabularyTopic[] = [
       {
         title: 'Naturaleza y animales (Nature & animals)',
         words: [
+          { english: 'stallions', spanish: 'sementales / caballos (stallion = caballo macho)', example: 'Two wild stallions ran across the field.' },
+          { english: 'pigeons', spanish: 'palomas', example: 'The pigeons gathered around the old man with bread.' },
+          { english: 'goldfish', spanish: 'pez dorado / pececito de colores', example: 'My daughter won a goldfish at the fair.' },
           { english: 'bark', spanish: '2 significados: 1) ladrar / ladrido · 2) corteza de un árbol', example: "The dog wouldn't stop barking.", example2: 'The bark of the tree was rough.' },
           { english: 'eagle', spanish: 'águila', example: 'An eagle flew over the mountains.' },
           { english: 'nun', spanish: 'monja (¡ojo! suena igual que "none" = ninguno)', example: 'The nun taught at the local school.' },
@@ -437,6 +450,8 @@ export const personalTopics: VocabularyTopic[] = [
       {
         title: 'Slang y expresiones (Slang & expressions)',
         words: [
+          { english: 'glitching', spanish: 'fallando / con fallos (glitch = falla técnica)', example: 'The screen keeps glitching during the call.' },
+          { english: 'mogging', spanish: 'eclipsar / opacar a alguien (slang, sobre todo en apariencia)', example: "That guy is mogging everyone in the room." },
           { english: 'swag', spanish: 'estilo / actitud cool (slang); artículos promocionales gratis', example: 'He walks around with so much swag. / We got free swag at the conference.' },
           { english: 'hang out', spanish: 'pasar el rato / juntarse (verbo)', example: "Let's hang out this weekend. / We used to hang out after class." },
           { english: 'gatekeep', spanish: 'acaparar / negar el acceso a algo (no dejar que otros entren o disfruten)', example: "Don't gatekeep the good tools — share them with the team." },

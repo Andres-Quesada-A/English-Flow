@@ -161,6 +161,12 @@ export const vocabularyTopics: VocabularyTopic[] = [
     level: 'A1',
     sections: [
       {
+        title: 'Del vocabulario personal (familia)',
+        words: [
+          { english: 'granny', spanish: 'abuela / abuelita (informal)', example: 'I visit my granny every Sunday.' },
+        ],
+      },
+      {
         title: 'Familia directa (Immediate family)',
         words: [
           { english: 'Family', spanish: 'Familia', example: 'My family gets together every Sunday for lunch.' },
@@ -302,6 +308,7 @@ Family is the strongest **bond** in life, and I'm grateful to **be born** into s
       {
         title: 'Del vocabulario personal (casa)',
         words: [
+          { english: 'matches', spanish: 'fósforos / cerillas', example: 'I need matches to light the candles.' },
           { english: 'fridge', spanish: 'refrigeradora / nevera', example: "There's some cake in the fridge if you want it." },
           { english: 'spatula', spanish: 'espátula', example: 'Use a spatula to flip the pancake.' },
           { english: 'blankets', spanish: 'cobijas / mantas', example: "It's cold tonight, grab a couple of blankets." },
@@ -611,6 +618,7 @@ Before bed, I **put on my pajamas**, **brush my teeth** again, and **set the ala
       {
         title: 'Del vocabulario personal (comida)',
         words: [
+          { english: 'schnitzel', spanish: 'schnitzel / milanesa (escalope empanizado)', example: 'I ordered a chicken schnitzel with fries.' },
           { english: 'cinnamon', spanish: 'canela', example: 'I like a bit of cinnamon in my coffee.' },
           { english: 'almond', spanish: 'almendra', example: 'I like almond milk in my coffee.' },
           { english: 'nougat', spanish: 'turrón', example: 'This chocolate bar has nougat inside.' },
@@ -1455,6 +1463,8 @@ On the way home, my **feet** were so tired that I could barely walk. My **toes**
       {
         title: 'Del vocabulario personal (apariencia)',
         words: [
+          { english: 'forehead', spanish: 'frente (parte de la cara)', example: 'She has a small scar on her forehead.' },
+          { english: 'freckles', spanish: 'pecas', example: 'He has freckles all over his nose and cheeks.' },
           { english: 'cheek', spanish: 'mejilla', example: 'She kissed him on the cheek.' },
           { english: 'dimples', spanish: 'hoyuelos', example: 'She has cute dimples when she smiles.' },
           { english: 'scalp', spanish: 'cuero cabelludo', example: 'The sun burned my scalp.' },

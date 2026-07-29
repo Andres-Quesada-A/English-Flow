@@ -608,6 +608,23 @@ const ipaDict: Record<string, string> = {
   'syllable': '/ˈsɪl.ə.bəl/',
   'sarcasm': '/ˈsɑːr.kæz.əm/',
 
+  // Personal vocabulary (batch 2)
+  'fancy': '/ˈfæn.si/',
+  'schnitzel': '/ˈʃnɪt.səl/',
+  'tiny': '/ˈtaɪ.ni/',
+  'stallions': '/ˈstæl.jənz/',
+  'fountain': '/ˈfaʊn.tən/',
+  'glitching': '/ˈɡlɪtʃ.ɪŋ/',
+  'licking': '/ˈlɪk.ɪŋ/',
+  'forehead': '/ˈfɔːr.hed/',
+  'freckles': '/ˈfrek.əlz/',
+  'pigeons': '/ˈpɪdʒ.ənz/',
+  'goldfish': '/ˈɡoʊld.fɪʃ/',
+  'mogging': '/ˈmɒɡ.ɪŋ/',
+  'granny': '/ˈɡræn.i/',
+  'cathedral': '/kəˈθiː.drəl/',
+  'matches': '/ˈmætʃ.ɪz/',
+
   // Study unit: suffix example words
   'creation': '/kriˈeɪ.ʃən/',
   'movement': '/ˈmuːv.mənt/',
