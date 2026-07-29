@@ -1,9 +1,9 @@
 'use client';
 
 import { useState, useCallback } from 'react';
-import { SpeakerIcon, CheckIcon, RefreshIcon, ChevronRightIcon } from '@/components/icons';
+import { SpeakerIcon, CheckIcon, RefreshIcon, ChevronRightIcon, ExternalLinkIcon } from '@/components/icons';
 import { Button } from '@/components/ui';
-import { speakText, getPhonetic } from '@/lib/utils/phonetics';
+import { speakText, getPhonetic, inglesComUrl } from '@/lib/utils/phonetics';
 import type { VocabularyWord } from '@/lib/data/vocabulary';
 
 interface FlashcardModeProps {
@@ -181,16 +181,31 @@ export function FlashcardMode({ words, topicId, onExit }: FlashcardModeProps) {
             {phonetic && (
               <p className="text-sm text-primary/70 font-mono">{phonetic}</p>
             )}
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                if (current) speakText(current.english);
-              }}
-              className="p-2 rounded-full text-text-muted hover:text-primary hover:bg-primary/10 transition-colors"
-              aria-label="Listen to pronunciation"
-            >
-              <SpeakerIcon size={20} />
-            </button>
+            <div className="flex items-center gap-2">
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  if (current) speakText(current.english);
+                }}
+                className="p-2 rounded-full text-text-muted hover:text-primary hover:bg-primary/10 transition-colors"
+                aria-label="Listen to pronunciation"
+              >
+                <SpeakerIcon size={20} />
+              </button>
+              {current && (
+                <a
+                  href={inglesComUrl(current.english)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="p-2 rounded-full text-text-muted hover:text-primary hover:bg-primary/10 transition-colors"
+                  aria-label="Ver en inglés.com: pronunciación, ejemplos y sinónimos"
+                  title="Ver en inglés.com: pronunciación, ejemplos y sinónimos"
+                >
+                  <ExternalLinkIcon size={18} />
+                </a>
+              )}
+            </div>
             <p className="text-xs text-text-muted mt-2">Tap to reveal translation</p>
           </div>
 

@@ -689,6 +689,14 @@ export function getEnglishVoices(): SpeechSynthesisVoice[] {
     .filter((v) => v.lang.toLowerCase().startsWith('en'));
 }
 
+/**
+ * Build the ingles.com translator URL for a word or phrase, where the user can
+ * review pronunciation, more examples and synonyms.
+ */
+export function inglesComUrl(term: string): string {
+  return `https://www.ingles.com/traductor/${encodeURIComponent(term.trim())}`;
+}
+
 export function speakText(text: string, lang = 'en-US'): void {
   if (typeof window === 'undefined' || !window.speechSynthesis) return;
   window.speechSynthesis.cancel();

@@ -5,11 +5,11 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Header, BottomNav, Sidebar } from '@/components/layout';
 import { Card, Button } from '@/components/ui';
-import { ChevronLeftIcon, ChevronRightIcon, SpeakerIcon, PlayIcon, CheckIcon } from '@/components/icons';
+import { ChevronLeftIcon, ChevronRightIcon, SpeakerIcon, PlayIcon, CheckIcon, ExternalLinkIcon } from '@/components/icons';
 import { useProgress } from '@/lib/hooks';
 import { useLearnedWords } from '@/lib/hooks/useLearnedWords';
 import { allVocabularyTopics } from '@/lib/data/vocabulary';
-import { getPhonetic, speakText } from '@/lib/utils/phonetics';
+import { getPhonetic, speakText, inglesComUrl } from '@/lib/utils/phonetics';
 import { FlashcardMode } from '@/components/vocabulary/FlashcardMode';
 
 interface Props {
@@ -202,6 +202,17 @@ export default function VocabularyTopicPage({ params }: Props) {
                                 >
                                   <SpeakerIcon size={13} />
                                 </button>
+                                <a
+                                  href={inglesComUrl(word.english)}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  onClick={(e) => e.stopPropagation()}
+                                  className="shrink-0 p-1 rounded-full text-text-muted hover:text-primary hover:bg-primary/10 transition-colors"
+                                  aria-label={`Ver "${word.english}" en inglés.com (pronunciación, ejemplos y sinónimos)`}
+                                  title="Ver en inglés.com: pronunciación, ejemplos y sinónimos"
+                                >
+                                  <ExternalLinkIcon size={13} />
+                                </a>
                               </div>
                               {phonetic && (
                                 <p className="text-xs text-primary/60 font-mono mt-0.5">{phonetic}</p>
