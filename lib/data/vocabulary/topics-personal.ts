@@ -252,6 +252,7 @@ export const personalTopics: VocabularyTopic[] = [
           { english: 'whole', spanish: 'entero / todo', example: 'I spent the whole day debugging one function.' },
           { english: 'stuff', spanish: 'cosas', example: 'I still have a lot of stuff to finish before Friday.' },
           { english: 'headache', spanish: 'dolor de cabeza (también: algo complicado)', example: 'This legacy code is a real headache to maintain.' },
+          { english: 'quint', spanish: 'quintillizo (uno de cinco hermanos)', example: "The famous quints just turned five. (escribiste 'quint'; ¿quizás 'quaint' = pintoresco/con encanto?)" },
         ],
       },
       {
@@ -346,6 +347,8 @@ export const personalTopics: VocabularyTopic[] = [
         words: [
           { english: 'cuz', spanish: 'porque (informal, forma escrita de "because")', example: "I'm staying home cuz I'm tired." },
           { english: 'goodness', spanish: 'bondad; ¡Dios mío! (my goodness / oh my goodness)', example: 'Oh my goodness, the build finally passed!' },
+          { english: 'stan', spanish: 'ser fan acérrimo / idolatrar (slang)', example: "I totally stan that band. / He's a huge stan of the show." },
+          { english: 'hangout', spanish: 'lugar para pasar el rato (también: hang out = pasar el rato)', example: "This café is our usual hangout. / Let's hang out after work." },
         ],
       },
       {
@@ -400,6 +403,7 @@ export const personalTopics: VocabularyTopic[] = [
           { english: 'cheat', spanish: 'engañar / hacer trampa', example: "He cheated on the test. / Don't try to cheat the system." },
           { english: 'yap', spanish: 'parlotear / hablar mucho (también: ladrar)', example: "He won't stop yapping about his new car." },
           { english: 'idk', spanish: 'no sé ("I don\'t know", abreviatura de chat)', example: 'idk, maybe we should ask the team first.' },
+          { english: 'greed', spanish: 'codicia / avaricia', example: 'Greed is probably his biggest flaw.' },
         ],
       },
     ],
