@@ -12,6 +12,9 @@ export const topics13to30: VocabularyTopic[] = [
       {
         title: 'Del vocabulario personal (lugares)',
         words: [
+          { english: 'fire hydrant', spanish: 'hidrante / boca de incendios', example: "Don't park next to the fire hydrant." },
+          { english: 'hydrant', spanish: 'hidrante (forma corta de fire hydrant)', example: 'The firefighters connected the hose to the hydrant.' },
+          { english: 'fireplug', spanish: 'hidrante (sinónimo informal)', example: 'Kids opened the fireplug to cool off in summer.' },
           { english: 'fountain', spanish: 'fuente (de agua)', example: 'We threw a coin into the fountain.' },
           { english: 'cathedral', spanish: 'catedral', example: 'The cathedral in the old town is beautiful.' },
           { english: 'jail', spanish: 'cárcel', example: 'He spent a night in jail after the fight.' },
@@ -151,6 +154,7 @@ For dinner, I usually go to a **restaurant** **in front of** the **theater**. Af
       {
         title: 'Del vocabulario personal (paisaje)',
         words: [
+          { english: 'grass', spanish: 'pasto / césped / hierba', example: 'The kids played on the grass.' },
           { english: 'cliff', spanish: 'acantilado / precipicio', example: 'We hiked all the way to the top of the cliff.' },
           { english: 'bumpy', spanish: 'con baches (también: turbulento)', example: 'The road was really bumpy.' },
         ],
@@ -942,6 +946,12 @@ I'm careful about **security**: I have a strong **password** for every **account
       {
         title: 'Del vocabulario personal (síntomas)',
         words: [
+          { english: 'sweat', spanish: 'sudor / sudar', example: 'I was covered in sweat after the run.' },
+          { english: 'overwhelmed', spanish: 'abrumado / agobiado', example: 'I feel overwhelmed by all these tickets.' },
+          { english: 'nearsighted', spanish: 'miope / corto de vista', example: "I'm nearsighted, so I need glasses to drive." },
+          { english: 'farsighted', spanish: 'hipermétrope (también: con visión de futuro)', example: 'My grandfather is farsighted and reads with glasses.' },
+          { english: 'passed out', spanish: 'se desmayó (pass out = desmayarse)', example: 'He passed out from the heat.' },
+          { english: 'vaccine', spanish: 'vacuna', example: 'The flu vaccine is free this year.' },
           { english: 'dizzy', spanish: 'mareado', example: 'I feel dizzy after staring at the screen all day.' },
           { english: 'numb', spanish: 'entumecido / adormecido', example: 'My hand went numb from typing all morning.' },
           { english: 'itching', spanish: 'picazón / comezón', example: 'My arm is itching from the bite.' },
@@ -1257,6 +1267,8 @@ When the **referee** blew the whistle, we had **won** the **match** 2-1! We were
       {
         title: 'Del vocabulario personal (animales)',
         words: [
+          { english: 'chick', spanish: 'pollito / polluelo', example: 'The hen has six little chicks.' },
+          { english: 'badger', spanish: 'tejón (también: fastidiar, insistir)', example: 'A badger dug a hole in the garden.' },
           { english: 'stallions', spanish: 'sementales / caballos (stallion = caballo macho)', example: 'Two wild stallions ran across the field.' },
           { english: 'pigeons', spanish: 'palomas', example: 'The pigeons gathered around the old man with bread.' },
           { english: 'goldfish', spanish: 'pez dorado / pececito de colores', example: 'My daughter won a goldfish at the fair.' },
@@ -1839,6 +1851,14 @@ The teacher gave each student a **grade**. I got a 9 out of 10, which is in the 
       {
         title: 'Del vocabulario personal (adjetivos)',
         words: [
+          { english: 'fluffy', spanish: 'esponjoso / mullido', example: 'The kitten is soft and fluffy.' },
+          { english: 'messy', spanish: 'desordenado / desprolijo', example: 'My desk is really messy today.' },
+          { english: 'dusty', spanish: 'polvoriento / con polvo', example: 'The old books were dusty.' },
+          { english: 'gorgeous', spanish: 'precioso / hermoso / guapísimo', example: 'The view from the top is gorgeous.' },
+          { english: 'wet', spanish: 'mojado / húmedo', example: 'Be careful, the floor is wet.' },
+          { english: 'nearby', spanish: 'cercano / cerca', example: 'Is there a pharmacy nearby?' },
+          { english: 'hilarious', spanish: 'graciosísimo / muy divertido', example: 'His joke was absolutely hilarious.' },
+          { english: 'haunting', spanish: 'inquietante / que te persigue', example: 'The song has a haunting melody.' },
           { english: 'fancy', spanish: 'elegante / lujoso / sofisticado', example: 'We went to a fancy restaurant for her birthday.' },
           { english: 'tiny', spanish: 'diminuto / minúsculo', example: 'There is a tiny bug in this function.' },
           { english: 'weird', spanish: 'raro / extraño', example: "That's weird, the code worked yesterday." },
@@ -1939,6 +1959,19 @@ I bought a **small** book about a **brave** young hero who fights against a **st
         title: 'Del vocabulario personal (verbos)',
         words: [
           { english: 'licking', spanish: 'lamiendo (lick = lamer)', example: 'The dog was licking my hand.' },
+          { english: 'chasing', spanish: 'persiguiendo (chase = perseguir)', example: 'The dog was chasing its tail.' },
+          { english: 'scratch', spanish: 'rascar / arañar (from scratch = desde cero)', example: "Don't scratch the mosquito bite." },
+          { english: 'cope', spanish: 'sobrellevar / lidiar (cope with)', example: "It's hard to cope with so much pressure." },
+          { english: 'flexing', spanish: 'presumir / alardear (slang)', example: "He's always flexing his new gadgets." },
+          { english: 'impersonate', spanish: 'hacerse pasar por / suplantar', example: 'Someone tried to impersonate the CEO by email.' },
+          { english: 'greet', spanish: 'saludar', example: 'She greeted everyone with a smile.' },
+          { english: 'rob', spanish: 'robar (a alguien o un lugar)', example: 'Two men tried to rob the bank.' },
+          { english: 'redeem', spanish: 'canjear / redimir', example: 'You can redeem your points for a discount.' },
+          { english: 'dodge', spanish: 'esquivar / eludir', example: 'He dodged the question completely.' },
+          { english: 'trap', spanish: 'trampa; atrapar', example: 'The bug is a trap for careless users.' },
+          { english: 'bouncing', spanish: 'rebotando (bounce = rebotar)', example: 'The ball kept bouncing down the stairs.' },
+          { english: 'raised', spanish: 'criado / educado; levantado (raise)', example: 'She was raised by her grandparents.' },
+          { english: 'delve', spanish: 'profundizar / indagar (delve into)', example: "Let's delve into the details later." },
           { english: 'behave', spanish: 'comportarse; funcionar (un sistema)', example: 'Behave yourself in the meeting.' },
           { english: 'apologize', spanish: 'disculparse / pedir perdón', example: 'You should apologize for that comment.' },
           { english: 'prove', spanish: 'probar / demostrar', example: 'I can prove the bug is in the API.' },

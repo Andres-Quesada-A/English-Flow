@@ -308,6 +308,19 @@ Family is the strongest **bond** in life, and I'm grateful to **be born** into s
       {
         title: 'Del vocabulario personal (casa)',
         words: [
+          { english: 'shelf', spanish: 'estante / repisa', example: 'Put the books back on the shelf.' },
+          { english: 'cutlery', spanish: 'cubiertos', example: 'The cutlery is in the top drawer.' },
+          { english: 'napkin', spanish: 'servilleta', example: 'Can you pass me a napkin?' },
+          { english: 'tablecloth', spanish: 'mantel', example: 'She put a clean tablecloth on the table.' },
+          { english: 'mattress', spanish: 'colchón', example: 'This mattress is too soft for my back.' },
+          { english: 'basement', spanish: 'sótano', example: 'We keep old boxes in the basement.' },
+          { english: 'vacuum', spanish: 'aspiradora (también: vacío)', example: 'I need to vacuum the living room.' },
+          { english: 'soaps', spanish: 'jabones', example: 'They sell handmade soaps at the market.' },
+          { english: 'deodorant', spanish: 'desodorante', example: "Don't forget to pack your deodorant." },
+          { english: 'diaper', spanish: 'pañal', example: 'The baby needs a new diaper.' },
+          { english: 'mold', spanish: 'moho (también: molde)', example: 'There is mold growing on the wall.' },
+          { english: 'fiberglass', spanish: 'fibra de vidrio', example: 'The boat is made of fiberglass.' },
+          { english: 'swings', spanish: 'columpios', example: 'The kids love the swings at the park.' },
           { english: 'matches', spanish: 'fósforos / cerillas', example: 'I need matches to light the candles.' },
           { english: 'fridge', spanish: 'refrigeradora / nevera', example: "There's some cake in the fridge if you want it." },
           { english: 'spatula', spanish: 'espátula', example: 'Use a spatula to flip the pancake.' },
@@ -618,6 +631,9 @@ Before bed, I **put on my pajamas**, **brush my teeth** again, and **set the ala
       {
         title: 'Del vocabulario personal (comida)',
         words: [
+          { english: 'wheat', spanish: 'trigo', example: 'This bread is made with whole wheat.' },
+          { english: 'lobster', spanish: 'langosta', example: 'We had grilled lobster by the sea.' },
+          { english: 'salted', spanish: 'salado / con sal', example: 'I prefer salted butter on my toast.' },
           { english: 'schnitzel', spanish: 'schnitzel / milanesa (escalope empanizado)', example: 'I ordered a chicken schnitzel with fries.' },
           { english: 'cinnamon', spanish: 'canela', example: 'I like a bit of cinnamon in my coffee.' },
           { english: 'almond', spanish: 'almendra', example: 'I like almond milk in my coffee.' },
@@ -884,6 +900,9 @@ After **eating**, we feel happy and full. My grandmother says that good food bri
       {
         title: 'Del vocabulario personal (accesorios)',
         words: [
+          { english: 'silk', spanish: 'seda', example: 'She wore a beautiful silk dress.' },
+          { english: 'garment', spanish: 'prenda (de vestir)', example: 'Wash this garment by hand.' },
+          { english: 'stockings', spanish: 'medias (largas)', example: 'She wore black stockings with her skirt.' },
           { english: 'belt', spanish: 'cinturón', example: 'I need a new belt for these pants.' },
         ],
       },
@@ -1463,6 +1482,8 @@ On the way home, my **feet** were so tired that I could barely walk. My **toes**
       {
         title: 'Del vocabulario personal (apariencia)',
         words: [
+          { english: 'braid', spanish: 'trenza', example: 'She tied her hair in a braid.' },
+          { english: 'wig', spanish: 'peluca', example: 'She wore a red wig for the party.' },
           { english: 'forehead', spanish: 'frente (parte de la cara)', example: 'She has a small scar on her forehead.' },
           { english: 'freckles', spanish: 'pecas', example: 'He has freckles all over his nose and cheeks.' },
           { english: 'cheek', spanish: 'mejilla', example: 'She kissed him on the cheek.' },
@@ -1617,6 +1638,8 @@ We may look different, but together we make a great team. Real beauty, after all
       {
         title: 'Del vocabulario personal (carácter)',
         words: [
+          { english: 'stubborn', spanish: 'terco / testarudo', example: "He's too stubborn to admit he was wrong." },
+          { english: 'proud', spanish: 'orgulloso', example: "I'm really proud of the team." },
           { english: 'wise', spanish: 'sabio', example: 'That was a wise decision.' },
           { english: 'silly', spanish: 'tonto / bobo', example: 'It was a silly mistake, easy to fix.' },
           { english: 'blunt', spanish: 'directo / sin rodeos', example: 'Sorry to be blunt, but this code is a mess.' },
