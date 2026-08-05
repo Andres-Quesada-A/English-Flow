@@ -360,6 +360,13 @@ export const personalTopics: VocabularyTopic[] = [
       {
         title: 'Comida y cocina (Food & cooking)',
         words: [
+          { english: 'pretzels', spanish: 'pretzels (galletas saladas)', example: 'We snacked on pretzels during the movie.' },
+          { english: 'sprinkles', spanish: 'chispas / grageas (para decorar)', example: 'She added sprinkles on top of the cupcakes.' },
+          { english: 'fondant', spanish: 'fondant (pasta para decorar tortas)', example: 'The cake was covered in white fondant.' },
+          { english: 'dough', spanish: 'masa (de harina); también: dinero (slang)', example: 'Let the dough rise for an hour.' },
+          { english: 'piping bag', spanish: 'manga pastelera', example: 'Use a piping bag to decorate the cake.' },
+          { english: 'edible', spanish: 'comestible', example: 'Are these mushrooms edible?' },
+          { english: 'jerky', spanish: 'carne seca / cecina (beef jerky)', example: 'I packed some beef jerky for the hike.' },
           { english: 'schnitzel', spanish: 'schnitzel / milanesa (escalope empanizado)', example: 'I ordered a chicken schnitzel with fries.' },
           { english: 'picky eater', spanish: 'quisquilloso para comer', example: 'My son is such a picky eater, he only eats pasta.' },
           { english: 'cinnamon', spanish: 'canela', example: 'I like a bit of cinnamon in my coffee.' },
@@ -400,6 +407,8 @@ export const personalTopics: VocabularyTopic[] = [
       {
         title: 'Personalidad y conducta (Personality & behavior)',
         words: [
+          { english: 'stingy', spanish: 'tacaño / codo', example: "He's too stingy to leave a tip." },
+          { english: 'bum', spanish: 'vago / holgazán (también: trasero, informal)', example: "Don't be a bum, get a job." },
           { english: 'accurate', spanish: 'preciso / exacto', example: 'The estimate was surprisingly accurate.' },
           { english: 'blunt', spanish: 'directo / sin rodeos (también: desafilado)', example: 'Sorry to be blunt, but this code is a mess.' },
           { english: 'immature', spanish: 'inmaduro', example: 'His reaction in the meeting was really immature.' },
@@ -463,6 +472,8 @@ export const personalTopics: VocabularyTopic[] = [
       {
         title: 'Casa y objetos (Home & objects)',
         words: [
+          { english: 'bin', spanish: 'cubo de basura / contenedor / papelera', example: 'Throw it in the bin.' },
+          { english: 'knob', spanish: 'perilla / pomo', example: 'Turn the knob to the right.' },
           { english: 'shelf', spanish: 'estante / repisa', example: 'Put the books back on the shelf.' },
           { english: 'cutlery', spanish: 'cubiertos', example: 'The cutlery is in the top drawer.' },
           { english: 'napkin', spanish: 'servilleta', example: 'Can you pass me a napkin?' },
@@ -480,6 +491,7 @@ export const personalTopics: VocabularyTopic[] = [
       {
         title: 'Materiales y ropa (Materials & clothing)',
         words: [
+          { english: 'scarf', spanish: 'bufanda (también: engullir, scarf down)', example: 'She wrapped a warm scarf around her neck.' },
           { english: 'silk', spanish: 'seda', example: 'She wore a beautiful silk dress.' },
           { english: 'fiberglass', spanish: 'fibra de vidrio', example: 'The boat is made of fiberglass.' },
           { english: 'garment', spanish: 'prenda (de vestir)', example: 'Wash this garment by hand.' },
@@ -508,6 +520,11 @@ export const personalTopics: VocabularyTopic[] = [
       {
         title: 'Más para describir (More describing)',
         words: [
+          { english: 'rare', spanish: '2 significados: 1) raro / poco común · 2) (carne) poco cocida / roja', example: 'It is rare to see snow here.', example2: 'I ordered my steak rare.' },
+          { english: 'illogical', spanish: 'ilógico', example: 'His argument was completely illogical.' },
+          { english: 'shady', spanish: 'sospechoso / turbio (persona o negocio); con sombra', example: 'That deal sounds a bit shady.' },
+          { english: 'stuck', spanish: 'atascado / atorado (pasado de stick)', example: "I'm stuck on this bug." },
+          { english: 'quiet', spanish: 'callado / silencioso / tranquilo', example: 'Please be quiet during the call.' },
           { english: 'fluffy', spanish: 'esponjoso / mullido', example: 'The kitten is soft and fluffy.' },
           { english: 'messy', spanish: 'desordenado / desprolijo', example: 'My desk is really messy today.' },
           { english: 'dusty', spanish: 'polvoriento / con polvo', example: 'The old books were dusty.' },
@@ -534,6 +551,14 @@ export const personalTopics: VocabularyTopic[] = [
       {
         title: 'Más verbos y acciones (More verbs & actions)',
         words: [
+          { english: 'convey', spanish: 'transmitir / comunicar (una idea)', example: 'The email did not convey the urgency.' },
+          { english: 'attach', spanish: 'adjuntar / anexar', example: 'Please attach the file to the email.' },
+          { english: 'quit', spanish: 'renunciar / dejar (algo)', example: 'He quit his job last month.' },
+          { english: 'pour', spanish: 'verter / servir (un líquido)', example: 'Can you pour me some water?' },
+          { english: 'smear', spanish: 'untar / embarrar (también: difamar)', example: 'Smear some butter on the bread.' },
+          { english: 'stick', spanish: '2 significados: 1) palo · 2) pegar / adherir', example: 'Pick up that stick from the floor.', example2: "The label won't stick to the bottle." },
+          { english: 'trade', spanish: 'comercio / intercambio; oficio (también: intercambiar)', example: 'They agreed to a fair trade.' },
+          { english: 'shopped', spanish: 'compró (pasado de shop); también: editado (photoshopped)', example: 'I shopped for groceries after work.' },
           { english: 'chasing', spanish: 'persiguiendo (chase = perseguir)', example: 'The dog was chasing its tail.' },
           { english: 'scratch', spanish: 'rascar / arañar (también: "from scratch" = desde cero)', example: "Don't scratch the mosquito bite.", example2: 'We built the app from scratch.' },
           { english: 'cope', spanish: 'sobrellevar / lidiar (cope with)', example: "It's hard to cope with so much pressure." },
@@ -564,6 +589,13 @@ export const personalTopics: VocabularyTopic[] = [
       {
         title: 'Más ideas y expresiones (More ideas & expressions)',
         words: [
+          { english: 'allowance', spanish: 'mesada / asignación (dinero)', example: 'My parents gave me a weekly allowance.' },
+          { english: 'handwriting', spanish: 'letra / caligrafía (escritura a mano)', example: 'I can barely read his handwriting.' },
+          { english: 'footage', spanish: 'metraje / grabación (video)', example: 'The security footage shows everything.' },
+          { english: 'streak', spanish: 'racha (también: raya / mechón)', example: 'The team is on a winning streak.' },
+          { english: 'quite', spanish: 'bastante / totalmente', example: 'That was quite a difficult sprint.' },
+          { english: 'replacement', spanish: 'reemplazo / repuesto / sustituto', example: 'We need a replacement for the broken part.' },
+          { english: 'weather forecast', spanish: 'pronóstico del tiempo', example: 'The weather forecast says it will rain.' },
           { english: 'deal', spanish: 'trato / acuerdo (también: "deal with" = lidiar con)', example: "It's a deal — see you at five.", example2: 'I have to deal with this bug first.' },
           { english: 'niche', spanish: 'nicho / hueco especializado (mercado)', example: 'They found a profitable niche in the market.' },
           { english: 'clue', spanish: 'pista / indicio', example: "I have no clue where the file is." },
@@ -578,6 +610,7 @@ export const personalTopics: VocabularyTopic[] = [
       {
         title: 'Frases y slang (Phrases & slang)',
         words: [
+          { english: 'stand it', spanish: 'soportarlo / aguantarlo ("can\'t stand it" = no soportarlo)', example: "I can't stand it when the build breaks." },
           { english: 'nap', spanish: 'siesta', example: 'I took a short nap after lunch.' },
           { english: "don't you dare", spanish: 'ni se te ocurra / no te atrevas', example: "Don't you dare touch my coffee!" },
           { english: 'dumb and dumber', spanish: 'tonto y más tonto (título de la película "Dumb and Dumber")', example: 'Those two together are like dumb and dumber.' },

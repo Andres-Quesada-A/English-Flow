@@ -428,6 +428,12 @@ After the meeting, I went to the **airport**. I **boarded** the **plane** at six
     level: 'A2',
     sections: [
       {
+        title: 'Del vocabulario personal (clima)',
+        words: [
+          { english: 'weather forecast', spanish: 'pronóstico del tiempo', example: 'The weather forecast says it will rain.' },
+        ],
+      },
+      {
         title: 'Tipos de clima (Weather types)',
         words: [
           { english: 'Weather', spanish: 'Clima / Tiempo' },
@@ -775,6 +781,7 @@ My dream is to get a **scholarship** and go to **university** to study medicine 
       {
         title: 'Del vocabulario personal (trabajo)',
         words: [
+          { english: 'footage', spanish: 'metraje / grabación (video)', example: 'The security footage shows everything.' },
           { english: 'glitching', spanish: 'fallando / con fallos (glitch = falla técnica)', example: 'The screen keeps glitching during the call.' },
           { english: 'acronym', spanish: 'acrónimo / sigla', example: 'API is an acronym for Application Programming Interface.' },
           { english: 'quote', spanish: 'cotización / presupuesto (también: cita / citar)', example: 'Can you send me a quote for the project?' },
@@ -1851,6 +1858,11 @@ The teacher gave each student a **grade**. I got a 9 out of 10, which is in the 
       {
         title: 'Del vocabulario personal (adjetivos)',
         words: [
+          { english: 'rare', spanish: 'raro / poco común; (carne) poco cocida', example: 'It is rare to see snow here.' },
+          { english: 'illogical', spanish: 'ilógico', example: 'His argument was completely illogical.' },
+          { english: 'shady', spanish: 'sospechoso / turbio; con sombra', example: 'That deal sounds a bit shady.' },
+          { english: 'stuck', spanish: 'atascado / atorado', example: "I'm stuck on this bug." },
+          { english: 'quiet', spanish: 'callado / silencioso / tranquilo', example: 'Please be quiet during the call.' },
           { english: 'fluffy', spanish: 'esponjoso / mullido', example: 'The kitten is soft and fluffy.' },
           { english: 'messy', spanish: 'desordenado / desprolijo', example: 'My desk is really messy today.' },
           { english: 'dusty', spanish: 'polvoriento / con polvo', example: 'The old books were dusty.' },
@@ -1958,6 +1970,14 @@ I bought a **small** book about a **brave** young hero who fights against a **st
       {
         title: 'Del vocabulario personal (verbos)',
         words: [
+          { english: 'convey', spanish: 'transmitir / comunicar (una idea)', example: 'The email did not convey the urgency.' },
+          { english: 'attach', spanish: 'adjuntar / anexar', example: 'Please attach the file to the email.' },
+          { english: 'quit', spanish: 'renunciar / dejar (algo)', example: 'He quit his job last month.' },
+          { english: 'pour', spanish: 'verter / servir (un líquido)', example: 'Can you pour me some water?' },
+          { english: 'smear', spanish: 'untar / embarrar (también: difamar)', example: 'Smear some butter on the bread.' },
+          { english: 'stick', spanish: 'palo; pegar / adherir', example: "The label won't stick to the bottle." },
+          { english: 'trade', spanish: 'comercio / intercambio (también: intercambiar)', example: 'They agreed to a fair trade.' },
+          { english: 'shopped', spanish: 'compró (pasado de shop)', example: 'I shopped for groceries after work.' },
           { english: 'licking', spanish: 'lamiendo (lick = lamer)', example: 'The dog was licking my hand.' },
           { english: 'chasing', spanish: 'persiguiendo (chase = perseguir)', example: 'The dog was chasing its tail.' },
           { english: 'scratch', spanish: 'rascar / arañar (from scratch = desde cero)', example: "Don't scratch the mosquito bite." },

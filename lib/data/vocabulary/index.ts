@@ -308,6 +308,8 @@ Family is the strongest **bond** in life, and I'm grateful to **be born** into s
       {
         title: 'Del vocabulario personal (casa)',
         words: [
+          { english: 'bin', spanish: 'cubo de basura / contenedor / papelera', example: 'Throw it in the bin.' },
+          { english: 'knob', spanish: 'perilla / pomo', example: 'Turn the knob to the right.' },
           { english: 'shelf', spanish: 'estante / repisa', example: 'Put the books back on the shelf.' },
           { english: 'cutlery', spanish: 'cubiertos', example: 'The cutlery is in the top drawer.' },
           { english: 'napkin', spanish: 'servilleta', example: 'Can you pass me a napkin?' },
@@ -631,6 +633,13 @@ Before bed, I **put on my pajamas**, **brush my teeth** again, and **set the ala
       {
         title: 'Del vocabulario personal (comida)',
         words: [
+          { english: 'pretzels', spanish: 'pretzels (galletas saladas)', example: 'We snacked on pretzels during the movie.' },
+          { english: 'sprinkles', spanish: 'chispas / grageas (para decorar)', example: 'She added sprinkles on top of the cupcakes.' },
+          { english: 'fondant', spanish: 'fondant (pasta para decorar tortas)', example: 'The cake was covered in white fondant.' },
+          { english: 'dough', spanish: 'masa (de harina)', example: 'Let the dough rise for an hour.' },
+          { english: 'piping bag', spanish: 'manga pastelera', example: 'Use a piping bag to decorate the cake.' },
+          { english: 'edible', spanish: 'comestible', example: 'Are these mushrooms edible?' },
+          { english: 'jerky', spanish: 'carne seca / cecina (beef jerky)', example: 'I packed some beef jerky for the hike.' },
           { english: 'wheat', spanish: 'trigo', example: 'This bread is made with whole wheat.' },
           { english: 'lobster', spanish: 'langosta', example: 'We had grilled lobster by the sea.' },
           { english: 'salted', spanish: 'salado / con sal', example: 'I prefer salted butter on my toast.' },
@@ -900,6 +909,7 @@ After **eating**, we feel happy and full. My grandmother says that good food bri
       {
         title: 'Del vocabulario personal (accesorios)',
         words: [
+          { english: 'scarf', spanish: 'bufanda', example: 'She wrapped a warm scarf around her neck.' },
           { english: 'silk', spanish: 'seda', example: 'She wore a beautiful silk dress.' },
           { english: 'garment', spanish: 'prenda (de vestir)', example: 'Wash this garment by hand.' },
           { english: 'stockings', spanish: 'medias (largas)', example: 'She wore black stockings with her skirt.' },
@@ -1638,6 +1648,8 @@ We may look different, but together we make a great team. Real beauty, after all
       {
         title: 'Del vocabulario personal (carácter)',
         words: [
+          { english: 'stingy', spanish: 'tacaño / codo', example: "He's too stingy to leave a tip." },
+          { english: 'bum', spanish: 'vago / holgazán (también: trasero, informal)', example: "Don't be a bum, get a job." },
           { english: 'stubborn', spanish: 'terco / testarudo', example: "He's too stubborn to admit he was wrong." },
           { english: 'proud', spanish: 'orgulloso', example: "I'm really proud of the team." },
           { english: 'wise', spanish: 'sabio', example: 'That was a wise decision.' },
